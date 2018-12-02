@@ -1,0 +1,125 @@
+@import "./users.scss";
+.aaa{
+  height: 100%;
+  padding-bottom: 50px;
+}
+.box4444{
+  height: 750px;
+  width: 450px;
+  background-color: white;
+  margin: 0 auto;
+  &__sas{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__signup{
+    width: 300px;
+    height: 40px;
+    background-color: #0099e8;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+  }
+  &__top{
+    border-bottom: 1px solid #f5f5f5;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+  &__bottom{
+    color: white;
+  }
+  &__text{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  &__rr{
+    background-color: #f5f5f5;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__er{
+    background-color: #385185;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__wr{
+    background-color: #dc4e41;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__item{
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 20px;
+    text-align: center;
+    &--black{
+      color: black;
+    }
+  }
+}
+.bottom-list7{
+  &__ul{
+    margin: 60px auto 30px;
+    width: 420px;
+  }
+  &__image{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+  &__item{
+    float: left;
+    font-size: 12px;
+    padding: 0 10px 30px;
+  }
+  &__footer{
+    text-align: center;
+    font-size: 11px;
+  }
+}
+.clearfix{
+  clear: both;
+  content: "";
+  display: block;
+}
+.form-yes{
+  color: black;
+  margin-top: 50px;
+  &__n{
+    height: 45px;
+    width: 270px;
+    line-height: 50px;
+    margin: 0 auto 20px;
+    display: block;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+  &__b{
+    padding: 5px;
+    color: white;
+    background-color: #ea352d;
+    width: 300px;
+    line-height: 40px;
+    margin: 0 auto 20px;
+    text-align: center;
+    display: block;
+  }
+}
+.robot{
+  color: black;
+  height: 60px;
+  width: 250px;
+  margin: 0 auto 20px;
+  line-height: 60px;
+  text-align: center;
+  background-color: green
+}
+.blue1{
+  color: #0099e8;
+  margin: 40px 0 0 70px;
+  font-size: 14px;
+}

@@ -1,0 +1,65 @@
+.header2{
+  width: 700px;
+  heigth: 100px;
+  margin: 0 auto 50px;
+  &__ul{
+    overflow: hidden;
+  }
+  &__item{
+    float: right;
+    line-height: 50px;
+    padding: 0 18px;
+    font-size: 12px;
+  }
+  &__maru{
+    height: 11px;
+    width: 11px;
+    border-radius: 50px;
+    background-color: #ccc;
+    margin: 0 auto;
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 5px;
+      border-bottom: 3px solid #ccc;
+      width: 100px;
+    }
+  }
+}
+.logo333-left{
+  width: 200px;
+  height: 100px;
+  float: left;
+  &__item{
+    padding-top: 20px;
+  }
+}
+.form-yes{
+  &__width{
+    width: 270px;
+    margin: 0 auto;
+  }
+  &__label{
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+.box44444{
+  height: 750px;
+  width:700px;
+  background-color: white;
+  margin: 0 auto;
+  &__top{
+    border-bottom: 1px solid #f5f5f5;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+  &__text{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
