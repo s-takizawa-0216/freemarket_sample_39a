@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'i#index'
+  root 'mercaries#index'
+  resources :mercaries
+  resources :items
+  resources :users
 end
