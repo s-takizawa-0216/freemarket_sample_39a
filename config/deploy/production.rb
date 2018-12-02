@@ -60,6 +60,10 @@
 #     # password: "please use keys"
 #   }
 
-
-
 server '52.193.94.241', user: 'ec2-user', roles: %w{app db web}
+
+app_path = File.expand_path('../../../', __FILE__)
+
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "#{app_path}/current/Gemfile"
+end
