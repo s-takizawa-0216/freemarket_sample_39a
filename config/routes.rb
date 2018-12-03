@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root 'mercaries#index'
   resources :mercaries
   resources :items
-  resources :users
+  resources :users do
+    collection do
+      get 'new1'
+    end
+  end
 end
