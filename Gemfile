@@ -80,4 +80,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'ransack'
 gem "font-awesome-rails"
+gem "mechanize"
 
