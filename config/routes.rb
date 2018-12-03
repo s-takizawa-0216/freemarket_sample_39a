@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'new1'
+      get 'new2'
     end
   end
 end
