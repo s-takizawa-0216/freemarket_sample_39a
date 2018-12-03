@@ -1,0 +1,2 @@
+class Lcategory < ApplicationRecord
+end
