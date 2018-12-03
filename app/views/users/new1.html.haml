@@ -26,15 +26,19 @@
         = form_for root_path, html: {class: "form-yes__f"} do |f|
           .form-yes__width
             %p.form-yes__label ニックネーム
+            %span.form-yes__label-req 必須
             = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
           .form-yes__width
-            %p.form-yes__label ニックネーム
+            %p.form-yes__label メールアドレス
+            %span.form-yes__label-req 必須
             = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
           .form-yes__width
-            %p.form-yes__label ニックネーム
+            %p.form-yes__label パスワード
+            %span.form-yes__label-req 必須
             = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
           .form-yes__width
-            %p.form-yes__label ニックネーム
+            %p.form-yes__label パスワード（確認）
+            %span.form-yes__label-req 必須
             = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
           .robot 私はロボットではありません
           = f.submit class: "form-yes__b", value: "次へ進む"
