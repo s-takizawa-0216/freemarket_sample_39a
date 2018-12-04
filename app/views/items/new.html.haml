@@ -1,0 +1,116 @@
+%head
+%body
+  .single-container
+    %header.single-header
+      %h1
+        %a{href: "top-page"}
+          %img{:alt => "mercari", height: "49", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1336231049", width: "185"}/
+    %main.single-main
+      %section.single-main__content
+        %div
+          %h2.single-main__content__head 商品の情報を入力
+          %form.single-main__content__form
+            .single-main__content__form__item
+              %h3.single-main__content__form__item__title 出品画像
+              %p 最大４枚までアップロードできます
+              .single-main__content__form__item__image
+                %input.upload-box{ type:"file", multiple:"image1"}
+                %pre ドラッグアンドドロップまたはクリックしてファイルをアップロード
+            .single-main__content__form__item
+              .single-main__content__form__item__detail
+                %label 商品名
+                %div
+                  %input.input-name{ placeholder: "商品名（必須40文字まで）"}
+              .single-main__content__form__item__detail
+                %label 商品の説明
+                %textarea.content-detail{ rows:"5", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+            .single-main__content__form__item.clearfix
+              %h4.item__sub 商品の詳細
+              .single-main__content__form__item__select
+                .single-main__content__form__item__detail
+                  %label カテゴリー
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+                .single-main__content__form__item__detail
+                  %label 商品の状態
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+            .single-main__content__form__item.clearfix
+              %h4.item__sub 配送について
+              .single-main__content__form__item__select
+                .single-main__content__form__item__detail
+                  %label 配送料の負担
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+                .single-main__content__form__item__detail
+                  %label 発送元の地域
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+                .single-main__content__form__item__detail
+                  %label 発送までの日数
+                  %div
+                    .select-wrap
+                      %select.select__item
+                        %option ---
+            .single-main__content__form__item.clearfix
+              %h4.item__sub 販売価格(300〜9,999,999)
+              .single-main__content__form__item__select
+                %ul.sell-price
+                  %li.sell-price__box
+                    %div.clearfix
+                      %label.box__left 価格
+                      .box__right
+                        ¥
+                        %div
+                          %input.input-name{ placeholder:"例） 300"}
+                  %li.sell-price__box--center.clearfix
+                    .sell-price__box--center--left 販売手数料(10%)
+                    .sell-price__box--center--right -
+                  %li.sell-price__box--bold
+                    .sell-price__box--bold--left 販売利益
+                    .sell-price__box--bold--right ー
+
+            .single-main__content__form__item
+              %div
+                %p
+                  %a 禁止されている出品
+                  、
+                  %a 行為
+                  を必ずご確認ください。
+                %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+                %p
+                  また、出品をもちまして
+                  %a 加盟店規約
+                  に同意したことになります。
+              %button.sell__btn__red{ type:"submit"} 出品する
+              %a.sell__btn__gray{ href:"#"} もどる
+
+    %footer.single-footer
+      %nav
+        %ul
+          %li
+            %a{ href:"#"} プライバシーポリシー
+          %li
+            %a{ href:"#"} メルカリ利用規約
+          %li
+            %a{ href:"#"} 特定商取引に関する表記
+      %a.single-footer__logo{ href:"#"}
+        %img{ src:"logo-gray.svg",height: "65", width:"80"}
+      %p
+        %small ©︎ 2018 Mercari
