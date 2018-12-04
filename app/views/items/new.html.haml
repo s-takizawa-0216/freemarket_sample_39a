@@ -3,8 +3,8 @@
   .single-container
     %header.single-header
       %h1
-        %a{href: "top-page"}
-          %img{:alt => "mercari", height: "49", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1336231049", width: "185"}/
+        %a{href: "mercaries#index"}
+          = image_tag("/images/logo.svg", height: "49",width: "185")
     %main.single-main
       %section.single-main__content
         %div
@@ -99,7 +99,7 @@
                   %a 加盟店規約
                   に同意したことになります。
               %button.sell__btn__red{ type:"submit"} 出品する
-              %a.sell__btn__gray{ href:"#"} もどる
+              %a.sell__btn__gray{ href:"root_path"} もどる
 
     %footer.single-footer
       %nav
@@ -111,6 +111,6 @@
           %li
             %a{ href:"#"} 特定商取引に関する表記
       %a.single-footer__logo{ href:"#"}
-        %img{ src:"logo-gray.svg",height: "65", width:"80"}
+        = image_tag("/logo-gray.svg",height: "65", width:"80")
       %p
         %small ©︎ 2018 Mercari
