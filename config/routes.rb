@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     collection do
       get 'new1'
       get 'new2'
+    end
+  end
+  resources :users_detail do
+    collection do
       get 'new3'
     end
   end
