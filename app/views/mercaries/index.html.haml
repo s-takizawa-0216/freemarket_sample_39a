@@ -12,8 +12,8 @@
   .header-inner
     .logo-bar
       %h1.logo
-        %a{href: "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1336231049", width: "134"}/
+        = link_to("https://www.mercari.com/jp/")
+          = image_tag ("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1336231049", alt:"mercari", height:36, width:134)
       %form.header-form{ action:"#"}
         %input.form__input{ placeholder: "キーワードから探す", type: "search"}
         %i.fa.fa-search
@@ -30,56 +30,30 @@
                   %ul.left__list__category__pulldown__name__child
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} トップス
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} ジャケット/アウター
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} パンツ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} スカート
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} 靴
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} ルームウェア/パジャマ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} レッグウェア
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} 帽子
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} バッグ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} アクセサリー
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} ヘアアクセサリー
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} 小物
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
                     %li.left__list__category__pulldown__name__child--li
                       %a{href:"#"} 時計
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
               %li.left__list__category__pulldown__name
                 %h3
                   %a{href: "https://www.mercari.com/jp/category/1/"} メンズ
@@ -180,92 +154,6 @@
         %li
           %a.header-btn__signup{href:"#"}
             新規会員登録
-        /     %a.sp-header-user-icon.header-nav__root{href: "https://www.mercari.com/jp/mypage/"}
-        /       %figure
-        /         %div
-        /           %img{alt:, src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "32"}/
-        /       %div マイページ
-        /   .header-user-box.header-mypage-box
-        /     .header-mypage-state.text-center
-        /       %figure
-        /         %div
-        /           %img{alt:, src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "60"}/
-        /         %figcaption まめお
-        /       %ul.header-mypage-review-listing
-        /         %li
-        /           %a{href: "https://www.mercari.com/jp/mypage/review/history/"} 評価: 0
-        /         %li
-        /           %a{href: "https://www.mercari.com/jp/mypage/listings/listing/"} 出品数: 0
-        /       %ul.header-mypage-sales-point
-        /         %li
-        /           %a.clearfix{href: "https://www.mercari.com/jp/mypage/sales/"}
-        /             .l-left 売上金
-        /             .l-right
-        /               ¥ 0
-        /               %i.icon-arrow-right
-        /         %li
-        /           %a.clearfix{href: "https://www.mercari.com/jp/mypage/point/"}
-        /             .l-left ポイント
-        /             .l-right
-        /               P 1,000
-        /               %i.icon-arrow-right
-        /     %ul.mypage-nav-list
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/like/history/"}
-        /           いいね！一覧
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/listing/"}
-        /           出品した商品 - 出品中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/in_progress/"}
-        /           出品した商品 - 取引中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/completed/"}
-        /           出品した商品 - 売却済み
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/purchase/"}
-        /           購入した商品 - 取引中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/purchased/"}
-        /           購入した商品 - 過去の取引
-        /           %i.icon-arrow-right
-        / %li{"data-id" => "header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-        /   %a.header-nav__root{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", href: "https://www.mercari.com/jp/mypage/notification/"}
-        /     %i.icon-bell
-        /     %span お知らせ
-        /   %ul.header-user-box.header-notification-box.mypage-item-list{"data-id" => "header-user-items"}
-        /     %li
-        /       %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/point/"}
-        /         %figure
-        /           %img{src: "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
-        /         .mypage-item-body
-        /           .mypage-item-text 有効期限が近づいているポイントがあります
-        /           %time
-        /             %i.icon-time
-        /             %span 5 時間前
-        /         %i.icon-arrow-right
-        /     %li
-        /       %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/news/"}
-        /         %figure
-        /           %img{src: "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
-        /         .mypage-item-body
-        /           .mypage-item-text 事務局から個別メッセージ「【P1000進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
-        /           %time
-        /             %i.icon-time
-        /             %span 5 時間前
-        /         %i.icon-arrow-right
-        / %li{"data-id" => "header-user-nav", "data-key" => "todo_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-        /   %a.header-nav__root{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", href: "https://www.mercari.com/jp/mypage/todo/"}
-        /     %i.icon-check
-        /     %span やることリスト
-        /   %ul.header-user-box.header-todo-box.mypage-item-list{"data-id" => "header-user-items"}
-        /     %li.mypage-item-not-found.bold 現在、やることリストはありません
-
 %main.main
   %section.banner
     .swiper-container
