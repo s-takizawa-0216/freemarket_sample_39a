@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'new1'
       get 'new2'
+      get 'new3'
     end
   end
 end
