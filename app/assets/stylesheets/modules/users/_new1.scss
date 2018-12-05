@@ -10,6 +10,19 @@
     line-height: 50px;
     padding: 0 18px;
     font-size: 12px;
+    &--red{
+      @extend .header2__item;
+      color: #ea352d;
+    }
+  }
+  &__last-item{
+    float: right;
+    line-height: 50px;
+    width: 50px;
+    font-size: 12px;
+    &__right{
+      float: right;
+    }
   }
   &__maru{
     height: 11px;
@@ -19,6 +32,38 @@
     margin: 0 auto;
     position: relative;
     &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 5px;
+        border-bottom: 3px solid #ccc;
+        width: 100px;
+        z-index: -2;
+    }
+    &--red{
+      @extend .header2__maru;
+      background-color: #ea352d;
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 5px;
+        border-bottom: 3px solid #ea352d;
+        width: 100px;
+        z-index: -2;
+      }
+    }
+  }
+  &__maru2{
+    float: right;
+    @extend .header2__maru;
+    &--red{
+      @extend .header2__maru;
+      background-color: #ea352d;
+    }
+    &:after{
       content: "";
       position: absolute;
       left: 0;
@@ -26,6 +71,7 @@
       bottom: 5px;
       border-bottom: 3px solid #ccc;
       width: 100px;
+      z-index: -2;
     }
   }
 }
@@ -37,7 +83,7 @@
     padding-top: 20px;
   }
 }
-.form-yes{
+.form-yes2{
   &__width{
     width: 270px;
     margin: 0 auto;
@@ -66,14 +112,65 @@
   width:700px;
   background-color: white;
   margin: 0 auto;
+  &__sas{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__signup{
+    width: 300px;
+    height: 40px;
+    background-color: #0099e8;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+  }
   &__top{
     border-bottom: 1px solid #f5f5f5;
     padding: 40px;
     margin-bottom: 50px;
+  }
+  &__bottom{
+    color: white;
   }
   &__text{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
   }
+  &__rr{
+    background-color: #f5f5f5;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__er{
+    background-color: #385185;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__wr{
+    background-color: #dc4e41;
+    width: 300px;
+    margin: 0 auto;
+  }
+  &__item{
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 20px;
+    text-align: center;
+    &--black{
+      color: black;
+    }
+  }
 }
+.robot-2{
+ width: 100%;
+  &__robotro{
+    margin: 0 220px;
+  }
+}
+
+
+
+
