@@ -1,0 +1,414 @@
+@import "./modules/mixin/color.scss";
+@import "./modules/mixin/clearfix.scss";
+@import "./modules/mixin/font-family.scss";
+@import "./modules/mercaries/bread-crumbs.scss";
+@import "./modules/mercaries/header.scss";
+@import "./item-content.scss";
+@import "./btn-red.scss";
+@import "./textarea.scss";
+@import "./btn-gray.scss";
+
+
+.default-content{
+   @include background;
+   @include font-family;
+
+
+  .item{
+    background-color: white;
+    margin:40px auto 0;
+    padding: 24px 40px 40px;
+    width:700px;
+    box-sizing:border-box;
+
+    a{
+      color: #0099e8;
+      text-decoration: none;
+
+      &:hover{
+        text-decoration:underline;
+        opacity: 0.7;
+      }
+    }
+
+    &__name{
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    &__content{
+      @include clearfix;
+      margin:16px 0 0 0;
+
+      &__image{
+        float:left;
+        min-width: 300px;
+        max-width:300px;
+        min-height: 375px;
+
+        &__top{
+          min-height:300px;
+        }
+
+        &__list{
+          @include clearfix;
+          height:75px;
+
+          &__inner{
+            height: 100%;
+            width:75px;
+            display: inline-block;
+            float:left;
+          }
+        }
+      }
+      &__table{
+        float:right;
+        max-width:300px;
+        height: 375px;
+        border-collapse: collapse;
+        border: 1px solid #f5f5f5;
+        font-size: 14px;
+
+        th{
+          text-align: left;
+          width:39%;
+          background: #fafafa;
+          font-weight: 400;
+          padding:8px;
+          border-collapse: collapse;
+          border: 1px solid #f5f5f5;
+        }
+
+        td{
+          width:61%;
+          border-collapse: collapse;
+          border: 1px solid #f5f5f5;
+          padding:8px;
+
+              .item-user__rating{
+                vertical-align: middle;
+                display: inline-block;
+                margin:8px 8px 0 0;
+
+                .fa.fa-laugh{
+                  color:#FA5882;
+                }
+
+                .fa.fa-meh{
+                  color:#FFBF00;
+                }
+
+                .fa.fa-frown{
+                  color:#81BEF7;
+                }
+
+                span{
+                   font-size:12px;
+                }
+              }
+        }
+      }
+    }
+
+    &__price{
+      text-align: center;
+      margin: 24px 0 0 0;
+
+      &--bold{
+        margin:0 16px 0 0;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      &__tax{
+        font-size: 10px;
+      }
+
+      &__shipping-fee{
+        font-size: 16px;
+      }
+    }
+
+    &__point{
+      text-align: center;
+
+      &__message{
+        display: inline-block;
+        position: relative;
+        line-height: 1.5;
+        color: #fff;
+        background: #05B0B4;
+        margin: 20px 0 0 0;
+        padding: 8px;
+        border-radius: 4px;
+
+        &:after{
+          content:"";
+          position: absolute;
+          bottom:-10px;
+          left:50%;
+          border-style: solid;
+          border-width: 10px 7.5px 0 7.5px;
+          border-color: #05B0B4 transparent;
+        }
+      }
+    }
+
+    &__btn{
+      color: white !important;
+      @include sell__btn__red;
+      height:60px;
+      font-size: 24px;
+      line-height: 60px;
+      font-weight: bold;
+      margin:16px 0 0 0;
+    }
+
+    &__description{
+      padding: 32px 0 0 0;
+      line-height: 1.5;
+
+
+      &--inner{
+        white-space: pre-wrap;
+      }
+    }
+
+    &__likes{
+      @include clearfix;
+      margin:16px 0 0;
+      font-size: 14px;
+
+      &__left{
+        float: left;
+
+        .item__button__likes{
+          @include font-family;
+          font-size: 14px;
+          background: #f5f5f5;
+          display: inline-block;
+          padding: 6px 12px;
+          border-radius: 40px;
+          transition: all ease-out .3s;
+          border: 1px solid #f5f5f5;
+        }
+
+        .item__button__report {
+          background: #f5f5f5;
+          display: inline-block;
+          padding: 8px 16px;
+          border-radius: 40px;
+          border: 1px solid #f5f5f5;
+          margin: 0 0 0 16px;
+          cursor: pointer;
+          color:#333;
+
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+
+      &__right{
+        float: right;
+        margin:8px 0 0;
+        text-decoration: none;
+        cursor: pointer;
+
+      }
+    }
+
+  }
+
+  .item-messages{
+    width:700px;
+    margin: 8px auto;
+
+    &__content{
+      background-color: white;
+
+      &--inner{
+        padding: 24px;
+
+        li{
+          @include clearfix;
+           margin-top: 1.5em;
+
+          .message__user{
+            @include background;
+            display:inline-block;
+            height:40px;
+            width:40px;
+            border-radius: 50%;
+            float: left;
+            position: relative;
+            top: -20px;
+
+            &__name{
+              width:600px;
+              max-width: 600px;
+              overflow:hidden;
+              position: absolute;
+              top: 0;
+              left: 56px;
+              height: 1.2em;
+              font-weight: bold;
+              font-size: 14px;
+
+            }
+          }
+
+          .message__body{
+            font-size: 14px;
+            width:600px;
+            float:right;
+            position: relative;
+            padding: 16px;
+            background: #eef0f4;
+            border-radius: 15px;
+            line-height: 1.5;
+            word-break: break-all;
+            box-sizing:border-box;
+
+            &__text{
+
+            }
+
+            &__icon{
+              margin: 8px 0 0;
+              color:#aaa;
+            }
+
+            &:after{
+              content: "";
+              display: inline-block;
+              position: absolute;
+              top: 3px;
+              left: -19px;
+              border: 8px solid transparent;
+              border-right: 18px solid #edf1ee;
+              -ms-transform: rotate(35deg);
+              -webkit-transform: rotate(35deg);
+              transform: rotate(35deg);
+            }
+          }
+        }
+        &__form{
+
+          p{
+            background: #fff6de;
+            font-size:14px;
+            padding:8px;
+          }
+
+          .sell__btn__gray{
+            @include font-family;
+            cursor: pointer;
+            width:100%;
+            margin-top: 8px;
+
+            &:hover{
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav__item-link{
+    @include clearfix;
+    width:700px;
+    margin:24px auto 0;
+
+    &--prev{
+      float:left;
+      text-decoration: none;
+      color:#0099e8;
+
+    }
+
+    &--next{
+      float:right;
+      text-decoration: none;
+      color:#0099e8;
+
+    }
+  }
+
+  .item-social-media{
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width:700px;
+    background-color: white;
+
+    &__box{
+      margin: 16px 0 0;
+      text-align: center;
+
+      li{
+        display: inline-block;
+        height: 44px;
+        width:44px;
+
+        i{
+          font-size: 44px;
+
+          &.fab.fa-facebook-square{
+            color:#084B8A;
+          }
+
+          &.fab.fa-twitter-square{
+            color:#2E9AFE;
+          }
+
+          &.fab.fa-line{
+            color:#00c137;
+          }
+
+          &.fab.fa-pinterest-square{
+            color:#aa262a;
+          }
+        }
+      }
+    }
+  }
+
+  .other-items{
+    width:700px;
+    margin: 0 auto;
+
+    &__head{
+      margin: 24px 0 8px;
+
+      a{
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+
+        &:hover{
+          text-decoration:underline;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &__contents{
+      @include clearfix;
+      margin-bottom: 40px;
+
+      .item-box__content{
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .grand-footer{
+    nav{
+      background-color:#212121;
+    }
+  }
+}
