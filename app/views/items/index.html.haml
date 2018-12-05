@@ -27,7 +27,7 @@
             %tr
               %th 出品者
               %td
-                %a{ href:"user_page" } ユーザー名
+                = link_to 'ユーザー名',"user_page"
                 %div
                   .item-user__rating
                     %i.fa.fa-laugh
@@ -41,22 +41,22 @@
             %tr
               %th カテゴリー
               %td
-                %a{ href:"category_page" }
+                = link_to "category_page" do
                   .large-category
                     %i.fa.fa-angle-right
                     大カテゴリ
-                %a{ href:"category_page" }
+                = link_to "category_page" do
                   .medium-category
                     %i.fa.fa-angle-right
                     中カテゴリ
-                %a{ href:"category_page" }
+                = link_to "category_page" do
                   .small-category
                     %i.fa.fa-angle-right
                     小カテゴリ
             %tr
               %th ブランド
               %td
-                %a{ href:"brand_page" }
+                = link_to "brand_page" do
                   %div ブランド名
             %tr
               %th 商品のサイズ
@@ -73,7 +73,7 @@
             %tr
               %th 配送元地域
               %td
-                %a{ href:"prefecture_page" }
+                = link_to "prefecture_page" do
                   %div 都道府県
             %tr
               %th 発送の目安
@@ -129,37 +129,38 @@
                     %span 日前
                 %i.icon-balloon
         .item-messages__content--inner
-          %form.item-messages__content--inner__form
-            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %textarea.content-detail{ rows:"4" }
-            %button.sell__btn__gray コメントする
+          = form_for root_path do |f|
+            .item-messages__content--inner__form
+              %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              = f.text_area :content,class:'content-detail',rows:"4"
+              = f.submit :'コメントする',class:'sell__btn__gray'
     %ul.nav__item-link.clearfix
       %li
-        %a.nav__item-link--prev{ href:"prev-item"}
+        = link_to "prev-item",class:'nav__item-link--prev' do
           %i.fa.fa-angle-left
           前のアイテム
       %li
-        %a.nav__item-link--next{ href:"next-item"}
+        = link_to "next-item",class:'nav__item-link--next' do
           次のアイテム
           %i.fa.fa-angle-right
     .item-social-media
       %ul.item-social-media__box
         %li
-          %a{ href:"www.facebook.com"}
-          %i.fab.fa-facebook-square
+          = link_to "www.facebook.com" do
+            %i.fab.fa-facebook-square
         %li
-          %a{ href:"www.twitter.com"}
-          %i.fab.fa-twitter-square
+          = link_to "www.twitter.com" do
+            %i.fab.fa-twitter-square
         %li
-          %a{ href:"www.line.com"}
-          %i.fab.fa-line
+          = link_to "www.line.com" do
+            %i.fab.fa-line
         %li
-          %a{ href:"www.printerest.com"}
-          %i.fab.fa-pinterest-square
+          = link_to "www.printerest.com" do
+            %i.fab.fa-pinterest-square
     .other-items
       %section.other-items__user
         %h2.other-items__head
-          %a{ href:"user-item-page"} ユーザーさんのその他の出品
+          = link_to 'ユーザーさんのその他の出品',"user-item-page"
         .other-items__contents.clearfix
           = render partial: 'mercaries/item-content'
           = render partial: 'mercaries/item-content'
@@ -169,7 +170,7 @@
           = render partial: 'mercaries/item-content'
       %section.other-items__brand
         %h2.other-items__head
-          %a{ href:"user-item-page"} ブランド名のその他の出品
+          = link_to 'ブランド名のその他の出品',"user-item-page"
         .other-items__contents.clearfix
           = render partial: 'mercaries/item-content'
           = render partial: 'mercaries/item-content'
