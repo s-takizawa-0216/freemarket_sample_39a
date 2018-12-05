@@ -1,19 +1,17 @@
 %head
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
-  %link{ href: "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css", rel: "stylesheet"}/
-  %script{ src: "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
+  / %link{ href: "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css", rel: "stylesheet"}/
+  / %script{ src: "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
   %link{ rel:"stylesheet",href:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" }
-
-
-
 %body
   %script{ src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js" }
+
 %header.header
   .header-inner
     .logo-bar
       %h1.logo
-        %a{href: "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1336231049", width: "134"}/
+        = link_to root_path do
+          = image_tag("/images/mercari-logo.svg", alt:"mercari", height:36, width:134)
       %form.header-form{ action:"#"}
         %input.form__input{ placeholder: "キーワードから探す", type: "search"}
         %i.fa.fa-search
@@ -22,124 +20,98 @@
         %ul.left__list__ul
           %li.left__list__category
             %h2
-              %a{href: "https://www.mercari.com/jp/category/"} カテゴリーから探す
+              = link_to("カテゴリーから探す","https://www.mercari.com/jp/category/")
             %ul.left__list__category__pulldown
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} レディース
+                  = link_to("レディース","https://www.mercari.com/jp/category/1/")
                   %ul.left__list__category__pulldown__name__child
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} トップス
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("トップス","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} ジャケット/アウター
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("ジャケット/アウター","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} パンツ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("パンツ","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} スカート
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("スカート","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} 靴
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("靴","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} ルームウェア/パジャマ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("ルームウェア/パジャマ","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} レッグウェア
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("レッグウェア","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} 帽子
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("帽子","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} バッグ
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("バッグ","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} アクセサリー
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("アクセサリー","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} ヘアアクセサリー
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("ヘアアクセサリー","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} 小物
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("小物","#")
                     %li.left__list__category__pulldown__name__child--li
-                      %a{href:"#"} 時計
-                    / %ul.left__list__category__pulldown__name__child--grand
-                    /   %li.left__list__category__pulldown__name__child--grand
+                      = link_to("時計","#")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} メンズ
+                  = link_to("メンズ","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} ベビー・キッズ
+                  = link_to("ベビー・キッズ","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} インテリア・住まい
+                  = link_to("インテリア・住まい", "https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} 本・音楽・ゲーム
+                  = link_to("本・音楽・ゲーム","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} おもちゃ・ホビー
+                  = link_to("おもちゃ・ホビー","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} コスメ・香水・美容
+                  = link_to("コスメ・香水・美容","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} 家電・スマホ・カメラ
+                  = link_to("家電・スマホ・カメラ","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} スポーツ・レジャー
+                  = link_to("スポーツ・レジャー","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} ハンドメイド
+                  = link_to("ハンドメイド","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} チケット
+                  = link_to("チケット","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} 自転車・オートバイ
+                  = link_to("自転車・オートバイ","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} その他
+                  = link_to("その他","https://www.mercari.com/jp/category/1/")
               %li.left__list__category__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/category/1/"} カテゴリ
+                  = link_to("カテゴリ","https://www.mercari.com/jp/category/1/")
           %li.left__list__brand
-            %a{href: "https://www.mercari.com/jp/brand/"} ブランドから探す
+            = link_to("ブランドから探す","https://www.mercari.com/jp/brand/")
             %ul.left__list__brand__pulldown
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/658/"} シャネル
+                  = link_to("シャネル","https://www.mercari.com/jp/brand/658/")
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/857/"} ナイキ
+                  = link_to("ナイキ","https://www.mercari.com/jp/brand/857/")
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/1326/"} ルイ ヴィトン
+                  = link_to("ルイ ヴィトン","https://www.mercari.com/jp/brand/1326/")
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/1620/"} シュプリーム
+                  = link_to("シュプリーム","https://www.mercari.com/jp/brand/1620/")
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/99/"} アディダス
+                  = link_to("アディダス","https://www.mercari.com/jp/brand/99/")
               %li.left__list__brand__pulldown__name
                 %h3
-                  %a{href: "https://www.mercari.com/jp/brand/"} ブランド一覧
+                  = link_to("ブランド一覧","https://www.mercari.com/jp/brand/")
       %script
         window.addEventListener('load', function(){
 
@@ -175,105 +147,19 @@
         }, false);
       %ul.right__list
         %li
-          %a.header-btn__red{href:"#"}
-            ログイン
+          = link_to("ログイン","#", class: "header-btn__red")
         %li
-          %a.header-btn__signup{href:"#"}
-            新規会員登録
-        /     %a.sp-header-user-icon.header-nav__root{href: "https://www.mercari.com/jp/mypage/"}
-        /       %figure
-        /         %div
-        /           %img{alt:, src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "32"}/
-        /       %div マイページ
-        /   .header-user-box.header-mypage-box
-        /     .header-mypage-state.text-center
-        /       %figure
-        /         %div
-        /           %img{alt:, src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "60"}/
-        /         %figcaption まめお
-        /       %ul.header-mypage-review-listing
-        /         %li
-        /           %a{href: "https://www.mercari.com/jp/mypage/review/history/"} 評価: 0
-        /         %li
-        /           %a{href: "https://www.mercari.com/jp/mypage/listings/listing/"} 出品数: 0
-        /       %ul.header-mypage-sales-point
-        /         %li
-        /           %a.clearfix{href: "https://www.mercari.com/jp/mypage/sales/"}
-        /             .l-left 売上金
-        /             .l-right
-        /               ¥ 0
-        /               %i.icon-arrow-right
-        /         %li
-        /           %a.clearfix{href: "https://www.mercari.com/jp/mypage/point/"}
-        /             .l-left ポイント
-        /             .l-right
-        /               P 1,000
-        /               %i.icon-arrow-right
-        /     %ul.mypage-nav-list
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/like/history/"}
-        /           いいね！一覧
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/listing/"}
-        /           出品した商品 - 出品中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/in_progress/"}
-        /           出品した商品 - 取引中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/listings/completed/"}
-        /           出品した商品 - 売却済み
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/purchase/"}
-        /           購入した商品 - 取引中
-        /           %i.icon-arrow-right
-        /       %li
-        /         %a.mypage-nav-list-item{href: "https://www.mercari.com/jp/mypage/purchased/"}
-        /           購入した商品 - 過去の取引
-        /           %i.icon-arrow-right
-        / %li{"data-id" => "header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-        /   %a.header-nav__root{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", href: "https://www.mercari.com/jp/mypage/notification/"}
-        /     %i.icon-bell
-        /     %span お知らせ
-        /   %ul.header-user-box.header-notification-box.mypage-item-list{"data-id" => "header-user-items"}
-        /     %li
-        /       %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/point/"}
-        /         %figure
-        /           %img{src: "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
-        /         .mypage-item-body
-        /           .mypage-item-text 有効期限が近づいているポイントがあります
-        /           %time
-        /             %i.icon-time
-        /             %span 5 時間前
-        /         %i.icon-arrow-right
-        /     %li
-        /       %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/news/"}
-        /         %figure
-        /           %img{src: "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
-        /         .mypage-item-body
-        /           .mypage-item-text 事務局から個別メッセージ「【P1000進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
-        /           %time
-        /             %i.icon-time
-        /             %span 5 時間前
-        /         %i.icon-arrow-right
-        / %li{"data-id" => "header-user-nav", "data-key" => "todo_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-        /   %a.header-nav__root{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", href: "https://www.mercari.com/jp/mypage/todo/"}
-        /     %i.icon-check
-        /     %span やることリスト
-        /   %ul.header-user-box.header-todo-box.mypage-item-list{"data-id" => "header-user-items"}
-        /     %li.mypage-item-not-found.bold 現在、やることリストはありません
-
+          = link_to("新規会員登録","#", class: "header-btn__signup")
 %main.main
   %section.banner
     .swiper-container
       .swiper-wrapper
         .swiper-slide
-          %img{src:"top-banner-kusanagi.jpg"}
+          = link_to do
+            = image_tag("/images/top-banner-kusanagi.jpg", class: "banner-image")
         .swiper-slide
-          %img{ href:"#",src:"top-banner-2.png"}
+          = link_to do
+            = image_tag("/images/top-banner-2.png", class: "banner-image")
         .swiper-slide
           .swiper-slide__content
             %h3
@@ -285,12 +171,12 @@
               %br
               購入時も安心な独自システムのアプリです
             .swiper-slide__content__link
-              %a.swiper-slide__content__link__itunes{href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank"}
-                %img{height: "50", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3814849698", width: "170"}/
-              %a.swiper-slide__content__link__android{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank"}
-                %img{height: "50", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3814849698", width: "170"}/
-            %img{src:"main_content_pc.png"}
-          %img.swiper-slide__bg{src:"main_bg_pc.jpg"}
+              = link_to("https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",class: "swiper-slide__content__link__itunes" ) do
+                = image_tag("/images/app-store.svg", width: "170")
+              = link_to("https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja",class: "swiper-slide__content__link__android") do
+                = image_tag("/images/google-play.svg",height: "50", width: "170")
+            = image_tag("/images/main_content_pc.png")
+          = image_tag("/images/main_bg_pc.jpg",class: "swiper-slide__bg")
       .swiper-pagination
       .swiper-button-prev
       .swiper-button-next
@@ -308,11 +194,11 @@
     %h2.pickup-header ピックアップカテゴリー
     .pickup-items
       %h3.pickup-items__title
-        %a{href:"#"}レディース新着アイテム
+        = link_to("レディース新着アイテム","#")
       .item-box
         %section.item-box__content
           %figure.item-box__content__image
-            %img{src:"m61013437077_1.jpg"}
+            = image_tag("")#m61013437077_1.jpg
           .item-box__content__detail
             %h3.item-box__content__detail__name
               新品 未使用 H&M クリスマス ピアス 6点セット
@@ -323,7 +209,7 @@
                 (税込)
         %section.item-box__content
           %figure.item-box__content__image
-            %img{src:"m61013437077_1.jpg"}
+            = image_tag("")#m61013437077_1.jpg
           .item-box__content__detail
             %h3.item-box__content__detail__name
               新品 未使用 H&M クリスマス ピアス 6点セット
@@ -334,7 +220,7 @@
                 (税込)
         %section.item-box__content
           %figure.item-box__content__image
-            %img{src:"m61013437077_1.jpg"}
+            = image_tag("")#m61013437077_1.jpg
           .item-box__content__detail
             %h3.item-box__content__detail__name
               新品 未使用 H&M クリスマス ピアス 6点セット
@@ -345,7 +231,7 @@
                 (税込)
         %section.item-box__content
           %figure.item-box__content__image
-            %img{src:"m61013437077_1.jpg"}
+            = image_tag("")#m61013437077_1.jpg
           .item-box__content__detail
             %h3.item-box__content__detail__name
               新品 未使用 H&M クリスマス ピアス 6点セット
@@ -355,30 +241,30 @@
               %p.item-box__content__detail__inner__tax
                 (税込)
       .item-box__viewall
-        %a{href:"#"} すべての商品を見る
+        = link_to("すべての商品を見る","#")
     .pickup-items
 
 
   %a.btn-exhibit{href:"#"}
     .sell 出品
     %i.fa.fa-camera
-    %aside.app-banner
+%aside.app-banner
   .app-banner__pc
     .app-banner__pc__inner
       %h2 スマホでかんたんフリマアプリ
       %p 今すぐ無料ダウンロード！
       .app-banner__icon.clearfix
         %figure.mercari-logo
-          %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1621863497", width: "68"}/
-        %ul.clearfix
+          =image_tag("/images/mercari_icon.png", width: "68")
+        %ul.app-logo
           %li
-            %a{href:"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank"}
-              %img{alt: "", height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1621863497", width: "133"}/
+            = link_to("https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8") do
+              =image_tag("/images/app-store.svg",alt: "", height: "40",  width: "133")
           %li
-            %a{href:"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank"}
-              %img{alt: "", height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1621863497", width: "133"}/
+            = link_to("https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank") do
+              = image_tag("/images/google-play.svg", alt: "", height: "40", width: "133" , class: "google-app-logo")
     %figure
-      %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?1621863497", class:"mobile-img"}/
+      = image_tag("/images/download_content_pc.png", alt: "", class:"mobile-img")
 %footer.global-footer
   %nav
     %ul
@@ -386,83 +272,83 @@
         %h2.footer-head メルカリについて
         %ul
           %li
-            %a{href:"https://about.mercari.com/"} 会社概要（運営会社）
+            = link_to("会社概要（運営会社","https://about.mercari.com/")
           %li
-            %a{href:"https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+            = link_to("プライバシーポリシー","https://www.mercari.com/jp/privacy/")
           %li
-            %a{href:"https://www.mercari.com/jp/tos/"} メルカリ利用規約
+            = link_to("メルカリ利用規約","https://www.mercari.com/jp/tos/")
           %li
-            %a{href:"https://www.mercari.com/jp/tos_paid_point/"} メルカリ利用規約・有償ポイントに関する特約
+            = link_to("メルカリ利用規約・有償ポイントに関する特約","https://www.mercari.com/jp/tos_paid_point/")
           %li
-            %a{href:"https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
+            = link_to("あんしんスマホサポート制度に関する利用特約","https://www.mercari.com/jp/tos_smartphone_support/")
           %li
-            %a{href:"https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
+            = link_to("コンプライアンスポリシー","https://www.mercari.com/jp/compliance/")
           %li
-            %a{href:"https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
+            = link_to("個人データの安全管理に係る基本方針","https://www.mercari.com/jp/data_security/")
           %li
-            %a{href:"https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+            = link_to("特定商取引に関する表記","https://www.mercari.com/jp/tokutei/")
           %li
-            %a{href:"https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
+            = link_to("資金決済法に基づく表示","https://www.mercari.com/jp/shikin_kessai/")
           %li
-            %a{href:"https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
+            = link_to("法令順守と犯罪抑止のために","https://about.mercari.com/csr/safety/")
           %li
-            %a{href:"https://www.mercari.com/jp/jobs/"} 採用情報
+            = link_to("採用情報","https://www.mercari.com/jp/jobs/")
       %li.footer-cell
         %h2.footer-head メルカリを見る
         %ul
           %li
-            %a{href:"https://www.mercari.com/jp/category/"} カテゴリー一覧
+            = link_to("カテゴリー一覧","https://www.mercari.com/jp/category/")
           %li
-            %a{href:"https://www.mercari.com/jp/brand/"} ブランド一覧
+            = link_to("ブランド一覧","https://www.mercari.com/jp/brand/")
           %li
-            %a{href:"https://www.mercari.com/jp/area/"} 出品地域一覧
+            = link_to("出品地域一覧","https://www.mercari.com/jp/area/")
           %li
-            %a{href:"https://jp-news.mercari.com/", target: "_blank"} 公式ブログ
+            = link_to("公式ブログ","https://jp-news.mercari.com/")
           %li
-            %a{href:"https://twitter.com/mercari_jp", target: "_blank"} 公式Twitter
+            = link_to("公式Twitter","https://twitter.com/mercari_jp")
           %li
-            %a{href:"https://www.facebook.com/mercarijp", target: "_blank"} 公式Facebook
+            = link_to("公式Facebook","https://www.facebook.com/mercarijp")
       %li.footer-cell
         %h2.footer-head ヘルプ＆ガイド
         %ul
           %li
-            %a{href:"https://www.mercari.com/jp/help_center/"} メルカリガイド
+            = link_to("メルカリガイド","https://www.mercari.com/jp/help_center/")
           %li
-            %a{href:"https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
+            = link_to("メルカリロゴ利用ガイドライン","https://www.mercari.com/jp/logo-guidelines/")
           %li
-            %a{href:"https://about.mercari.com/press/news/"} お知らせ
+            = link_to("お知らせ","https://about.mercari.com/press/news/")
           %li
-            %a{href:"https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便とは
+            = link_to("らくらくメルカリ便とは","https://www.mercari.com/jp/rakuraku-mercari/")
           %li
-            %a{href:"https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便とは
+            = link_to("ゆうゆうメルカリ便とは","https://www.mercari.com/jp/yuyu-mercari/")
           %li
-            %a{href:"https://www.mercari.com/jp/rakuraku-ogata/"} 大型らくらくメルカリ便とは
+            = link_to("大型らくらくメルカリ便とは","https://www.mercari.com/jp/rakuraku-ogata/")
           %li
-            %a{href:"https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
+            = link_to("車体取引ガイド","https://www.mercari.com/jp/guide/car/")
           %li
-            %a{href:"https://www.mercari.com/jp/refund-returns/"} 返品・返金ポリシー
+            = link_to("返品・返金ポリシー","https://www.mercari.com/jp/refund-returns/")
           %li
-            %a{href:"https://www.mercari.com/jp/safe/description/", target: "_blank"} メルカリあんしん・あんぜん宣言！
+            = link_to("メルカリあんしん・あんぜん宣言！","https://www.mercari.com/jp/safe/description/")
           %li
-            %a{href:"https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
+            = link_to("偽ブランド品撲滅への取り組み","https://www.mercari.com/jp/authenticity/")
           %li
-            %a{href:"https://www.mercari.com/jp/box/"} メルカリボックス
+            = link_to("メルカリボックス","https://www.mercari.com/jp/box/")
       %li.footer-cell
         %h2.footer-head 国
         %ul.footer-nav-lang
           %li
-            %a.foreign_countries{href:"https://www.mercari.com/"}
-              %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?1621863497", width: "22"}>/
+            = link_to("https://www.mercari.com/", class: "foreign_countries") do
+              = image_tag("/images/flag_us.png", alt: "",  width: "22")
               United States
           %li
-            %a.foreign_countries{href:"https://www.mercari.com/uk/"}
-              %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?1621863497", width: "22"}>/
+            = link_to("https://www.mercari.com/uk/", class: "foreign_countries") do
+              = image_tag("/images/flag_uk.png", alt: "",  width: "22")
               United Kingdom
           %li
-            %a.active{href:"https://www.mercari.com/jp/"}
-              %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1621863497", width: "22"}>/
+            = link_to("https://www.mercari.com/jp/") do
+              = image_tag("/images/flag_jp.png", alt: "", width: "22")
               日本
-  %a.footer-logo{href:"https://www.mercari.com/jp/"}
-    %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1621863497", width: "124"}/
+  = link_to("https://www.mercari.com/jp/", class: "footer-logo") do
+    = image_tag("/images/logo-white.svg",alt: "mercari", height: "33", width: "124")
   %p.footer-copyright
     %small © 2018 Mercari
