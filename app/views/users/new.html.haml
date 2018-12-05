@@ -17,8 +17,10 @@
       .form-yes
         = form_for root_path, html: {class: "form-yes__f"} do |f|
           = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
+          .margin-god-c
           = f.text_field :password, placeholder: "パスワード",class: "form-yes__n"
-          .robot 私はロボットではありません
+          .robot
+            .g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
           = f.submit class: "form-yes__b", value: "ログイン"
       %p.blue1 パスワードをお忘れの方
   .bottom-list7
