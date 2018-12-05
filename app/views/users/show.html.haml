@@ -1,0 +1,46 @@
+.defaultcontainer
+
+ .header header
+ .header__nav header
+
+.main-content
+ %main.r-content-clearfix
+  .rightcontent
+   %section.rightcontent__section
+    %h2.rightcontent__head 本人情報の登録
+    %p.rightcontent__text お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+    %form.rightcontent__main
+     .rightcontent__group
+      %label.jusyo 住所
+      %span.rightcontent__requied 必須
+     .rightcontent__addres
+      %addres
+       %p 郵便番号
+       %p 住所
+       %p 名前
+      = link_to "編集" ,"", class: "rightcontent__edit"
+     .rightcontent__sub
+      %label.jusyo__birthday 生年月日
+      %span.rightcontent__requied 必須
+      %br/
+      .birthday__select__wrap
+       = form_for root_path  do |f|
+        .select-default{:name => "year"}
+         = f.date_select :deadline_at, {order: [ :year, :month, :day ], use_month_numbers: true , start_year: 1900 , discard_day: true , discard_month: true},{class: "form-control"}
+         %i.arrow__under__left <
+         .year 年
+         %i.arrow__under__left__center <
+         = f.date_select :deadline_at, {order: [ :year, :month, :day ], use_month_numbers: true ,start_year: 1990 , discard_year: true ,date_separator: '月'},{class: "form-control"}
+         .year__day 日
+        %i.arrow__under__left__center__right <
+
+      %p.form  ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+      %button.btn-default.btn-red{ type: "submit"} 登録する
+     .formgroup__text
+      %p.formgroup__text__text
+       = link_to "本人情報の登録について＞" , "" ,class: "rightcontent__edit"
+
+  = render partial: "users/left-bar"
+
+ .footer footer
+ .footer__main footer
