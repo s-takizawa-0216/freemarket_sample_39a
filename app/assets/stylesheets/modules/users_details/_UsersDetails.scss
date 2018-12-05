@@ -1,0 +1,36 @@
+.box9{
+  height: 400px;
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  &__top{
+    border-bottom: 1px solid #f5f5f5;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+  &__top-text{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__text{
+    text-align: center;
+    font-size: 17px;
+    line-height: 21px;
+  }
+}
+.form-yes4{
+  color: black;
+  margin-top: 50px;
+  &__b{
+    padding: 5px;
+    color: white;
+    background-color: #ea352d;
+    width: 300px;
+    line-height: 40px;
+    margin: 0 auto 20px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+  }
+}

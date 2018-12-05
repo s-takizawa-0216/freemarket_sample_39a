@@ -1,0 +1,28 @@
+.mercari-logo-gray{
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.footer-logo{
+  &__ul{
+    margin: 60px auto 30px;
+    width: 420px;
+    &__list{
+      float: left;
+      font-size: 12px;
+      padding: 0 10px 30px;
+    }
+  }
+  &__text{
+    text-align: center;
+    font-size: 11px;
+  }
+}
+.clearfix{
+  clear: both;
+  content: "";
+  display: block;
+}
+
