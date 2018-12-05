@@ -3,21 +3,21 @@
     .logo333-left
       = image_tag("logo.svg", class: "logo333-left__item")
     %ul.header2__ul
-      %li.header2__item
-        完了
-        .header2__maru
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
       %li.header2__item
         支払い情報
         .header2__maru
       %li.header2__item
         住所入力
         .header2__maru
-      %li.header2__item
+      %li.header2__item--red
         電話番号認証
-        .header2__maru
-      %li.header2__item
+        .header2__maru--red
+      %li.header2__item--red
         会員情報
-        .header2__maru
+        .header2__maru--red
   .box3.clearfix
     .box3__top
       %p.box3__text 住所入力
@@ -75,3 +75,4 @@
       %li.bottom-list7__item 特定商取引に関する表記
     = image_tag("logo-gray", class: "bottom-list7__image clearfix")
     %p.bottom-list7__footer © 2018 Mercari
+_
