@@ -1,0 +1,22 @@
+= render partial: "mercaries/header"
+
+.defaultcontainer
+
+.main-content
+ %main.r-content-clearfix
+  .rightcontent2
+   %section.rightcontent__container
+    %h2.rightcontent2__head プロフィール
+    .rightcontent__profile
+     %figure.rightcontent__icon
+      =image_tag("/images/member_photo_noimage_thumb.png" , size: "60x60" , alt: "user")
+     %input.rightcontent__input{ name: "nickname", placeholder: "例)sample-name", type: "text", value:  "sample-name"}/
+    .rightcontent__content
+     %textarea.rightcontent__content--text{ name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+     %button.btn-default.btn-red{ type: "submit"} 変更する
+
+  = render partial: "users/left-bar"
+
+ = render partial: "mercaries/aside"
+ = render partial: "mercaries/footer"
+
