@@ -3,9 +3,9 @@
     .logo333-left
       = image_tag("logo.svg", class: "logo333-left__item")
     %ul.header2__ul
-      %li.header2__item
-        完了
-        .header2__maru
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
       %li.header2__item
         支払い情報
         .header2__maru
@@ -27,20 +27,26 @@
           .form-yes__width
             %p.form-yes__label ニックネーム
             %span.form-yes__label-req 必須
-            = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
+            = f.text_field :name, placeholder: "例)メルカリ太郎", class: "form-yes__n"
+            .margin-god-c
           .form-yes__width
             %p.form-yes__label メールアドレス
             %span.form-yes__label-req 必須
-            = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
+            = f.text_field :name, placeholder: "PC・携帯どちらでも可", class: "form-yes__n"
+            .margin-god-c
           .form-yes__width
             %p.form-yes__label パスワード
             %span.form-yes__label-req 必須
-            = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
+            = f.text_field :name, placeholder: "6文字以上", class: "form-yes__n"
+            .margin-god-c
           .form-yes__width
             %p.form-yes__label パスワード（確認）
             %span.form-yes__label-req 必須
-            = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
-          .robot 私はロボットではありません
+            = f.text_field :name, placeholder: "6文字以上", class: "form-yes__n"
+            .margin-god-c
+          .robot-2
+            .robot-2__robotro.g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
+          .margin-god-c
           = f.submit class: "form-yes__b", value: "次へ進む"
   .bottom-list7
     %ul.bottom-list7__ul
