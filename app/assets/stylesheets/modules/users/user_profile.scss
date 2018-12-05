@@ -1,0 +1,39 @@
+.rightcontent {
+  &__profile {
+    background-image:url("/images/user-bg.png");
+    padding: 48px 16px 24px;
+    text-align: center;
+  }
+  &__icon {
+    display: inline-block;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  &__input {
+    height: 33px;
+    padding: 5px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    width: 220px;
+  }
+  &__content {
+    padding: 40px 16px;
+    &--text {
+      min-height:216px;
+      display: block;
+      width: 100%;
+      max-width: 98%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}

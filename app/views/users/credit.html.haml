@@ -1,8 +1,4 @@
-.defaultcontainer
-
- .header header
- .header__nav header
- .header__pan pan
+= render partial: "mercaries/header"
 
 .main-content
  %main.r-content-clearfix
@@ -18,19 +14,18 @@
         %form.rightcontent2__creditcard
          %figure
           =image_tag("/images/visa-logo.png" , size: "49x15" , alt: "visa")
-          / %img{:alt => "visa", :height => "15", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1621863497", :width => "49"}/
           .rightcontent2__creditnumber **************
           .rightcontent2__creditnumber 日にち
-          %button.leftcontent2__button{:type => "submit"} 削除する
+          %button.rightcontent2__button{:type => "submit"} 削除する
      .rightcontent2__footer
      %a.rightcontent2__cash{href:"#"}
-      %span.leftcontent2__cash2 支払い方法について＞
-
+      %span.righttcontent2__cash2 支払い方法について＞
 
   = render partial: "users/left-bar"
 
- .footer footer
- .footer__main footer
+ = render partial: "mercaries/aside"
+ = render partial: "mercaries/footer"
+
 
 
 
