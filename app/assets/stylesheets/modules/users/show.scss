@@ -1,15 +1,14 @@
-.defaultcontainer {
-  width: 100%;
-}
-
-.main-content {
-  background-color: #EEEEEE;
-  padding-top: 40px;
-}
-
-.r-content-clearfix {
- margin: 40px auto 0;
- width: 1020px;
+.header {
+ width: 100%;
+ height: 60px;
+   &__nav {
+    width: 100%;
+    height: 30px;
+   }
+   &__pan {
+    width: 100%;
+    height:50px;
+   }
 }
 
 select {
@@ -26,18 +25,44 @@ select {
   color: inherit;
 }
 
-.header {
- width: 100%;
- height: 60px;
-   &__nav {
-    width: 100%;
-    height: 30px;
-   }
-   &__pan {
-    width: 100%;
-    height:50px;
-   }
+.defaultcontainer {
+  width: 100%;
 }
+
+.main-content {
+  background-color: #EEEEEE;
+  padding-top: 40px;
+}
+
+.r-content-clearfix {
+ margin: 40px auto 0;
+ width: 1020px;
+}
+
+.year {
+  display: inline-block;
+  padding: 5px;
+  &__day {
+      display: inline-block;
+      padding: 5px;
+  }
+}
+
+.form-control {
+ position: relative;
+ z-index: 2;
+ height: 48px;
+ padding: 0 16px;
+ border-radius: 4px;
+ border: 1px solid #ccc;
+ background: 0;
+ font-size: 16px;
+ line-height: 1.5;
+ cursor: pointer;
+ width: 140px;
+ display: inline-block;
+}
+
 
 .r-content-clearfix::after {
  display: block;
@@ -98,13 +123,13 @@ select {
 
 .birthday__select__wrap {
     display: inline-block;
-    margin-top: 4px;
+    margin-top: 10px;
     position: relative;
 }
 
-.arrow__under {
+.arrow__under__left {
  position: absolute;
- right: 40px;
+ right: 375px;
  top: 32%;
  z-index: 0;
  color: #888;
@@ -112,20 +137,28 @@ select {
  -webkit-transform: translate(0, -50%);
  transform: rotate(270deg);
  font-weight:bold;
-}
-
-.select-default {
- position: relative;
- z-index: 2;
- height: 48px;
- padding: 0 16px;
- border-radius: 4px;
- border: 1px solid #ccc;
- background: 0;
- font-size: 16px;
- line-height: 1.5;
- cursor: pointer;
- width: 140px;
+  &__center {
+   position: absolute;
+   right: 200px;
+   top: 32%;
+   z-index: 0;
+   color: #888;
+   font-size: 20px;
+   -webkit-transform: translate(0, -50%);
+   transform: rotate(270deg);
+   font-weight:bold;
+  }
+  &__center__right {
+   position: absolute;
+   right: 40px;
+   top: 32%;
+   z-index: 0;
+   color: #888;
+   font-size: 20px;
+   -webkit-transform: translate(0, -50%);
+   transform: rotate(270deg);
+   font-weight:bold;
+  }
 }
 
 .btn-default {
