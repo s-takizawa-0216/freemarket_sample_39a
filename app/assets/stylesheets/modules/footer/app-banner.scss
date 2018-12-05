@@ -1,5 +1,5 @@
 .app-banner{
-  background: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?52408201");
+  background: url(/images/app-baner_background.jpg);
   background-position: center;
   min-width: 768px;
     &__pc{
@@ -11,51 +11,52 @@
       color: #fff;
       &__inner{
         position: absolute;
-        height: 260px;
         top: 50%;
         transform: translateY(-50%);
         left: 16px;
         text-shadow: none;
         h2{
+          margin: 0;
           font-size: 16px;
+          line-height: 1.4;
         }
         p{
           margin-top: 10px;
           font-size: 24px;
         }
-        &__icon{
-          margin-top: 20px;
-          figure{
-            .mercari-logo{
-              display: inline-block;
-            }
-          ul{
-            display: inline-block;
-            margin-left: 24px;
-            li{
-              margin-top: 15px;
-              color: #fff;
-              }
-            a{
-              color: #fff;
-              display: inline-block;
-              }
-            }
-          }
-        }
       }
     }
-
-    .mobile-img{
-        width: 300px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-      .app-image{
-        height: 100%;
+    &__icon{
+      margin: 20px 0 0;
+      // width: 500px;
+    }
+    .mercari-logo{
+      display: inline-block;
+    }
+    .app-logo{
+        display: inline-block;
+        margin-left: 24px;
+      }
+    ul{
+      margin-left: 24px;
+      li{
+        // margin-top: 15px;
+        color: #fff;
+        display: inline-block;
+        }
+      }
+    .google-app-logo{
+      margin:0 0 0 16px;
+    }
+  .mobile-img{
+      width: 300px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    .app-image{
+      height: 100%;
     }
   }
 }
-
