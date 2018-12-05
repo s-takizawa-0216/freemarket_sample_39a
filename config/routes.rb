@@ -9,9 +9,15 @@ Rails.application.routes.draw do
       get 'new2'
     end
   end
-  resources :users_detail do
+  resources :users_details do
+      get 'create'
     collection do
       get 'new3'
+    end
+  end
+  resources :credit_cards do
+    collection do
+      get 'new4'
     end
   end
 end
