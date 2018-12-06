@@ -1,0 +1,23 @@
+.btn-exhibit{
+  position: fixed;
+  display: inline-block;
+  bottom:32px;
+  right: 32px;
+  background: #ea352d;
+  height: 160px;
+  width:160px;
+  text-decoration: none;
+  border-radius:50%;
+  color: white;
+  text-align: center;
+  z-index:30;
+
+  .sell{
+    margin-top: 32px;
+    font-size:22px;
+  }
+  .fa.fa-camera{
+    font-size: 54px;
+    margin: 8px 0 0;
+  }
+}

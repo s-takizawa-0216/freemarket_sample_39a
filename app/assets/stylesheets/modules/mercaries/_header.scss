@@ -1,8 +1,12 @@
+@import "./modules/mixin/color.scss";
+@import "./modules/mixin/clearfix.scss";
+
 a{
   color:#333;
 }
 
 .header{
+  width:100vm;
   background-color: white;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
@@ -10,6 +14,7 @@ a{
       width:1020px;
       margin : 0 auto;
       padding: 8px 0 0;
+      background-color: white;
 
 
     .logo-bar{
@@ -32,7 +37,7 @@ a{
           width:100%;
           height: 36px;
           box-sizing:border-box;
-          border:1px solid #ccc;;
+          border:1px solid #ccc;
           border-radius: 4px;
           padding: 9px 32px 9px 8px;
           font-family: inherit;
@@ -52,8 +57,9 @@ a{
 
     }
     .header-nav__box{
-      margin: 6px 0 0;
+      margin: 8px 0 0;
       z-index:100;
+      @include clearfix;
 
       .left__list{
         display: inline-block;
@@ -178,35 +184,215 @@ a{
       }
 
       .right__list{
-        float:right;
-        display: inline-block;
-        font-size: 14px;
+         float:right;
 
-        >li{
-          display: inline-block;
-          margin-bottom: 10px;
+        .right__list__li{
+          position: relative;
 
-        }
+            >li{
+              &:first-child{
+                padding: 0;
+              }
+              display: inline-block;
+              margin-bottom: 10px;
+              padding: 0 0 0 16px;
+              text-align: center;
 
-        .header-btn__red{
-          padding: 8px 10px;
-          line-height: 30px;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-          border-radius:4px;
-          text-decoration: none;
-        }
+              span{
+                padding:0 0 0 8px;
+              }
 
-        .header-btn__signup{
-          padding: 8px 10px;
-          border: 1px solid #0099e8;
-          background: #fff;
-          color: #0099e8;
-          text-shadow: none;
-          margin-left:6px;
-          border-radius:4px;
-          text-decoration: none;
+            .header-mypage{
+              height: 32px;
+              display: inline-block;
+              font-size: 14px;
+              text-decoration: none;
+
+                figure{
+                  width:32px;
+                  height: 32px;
+                  display: inline-block;
+                  position: relative;
+                  vertical-align: middle;
+
+                    div{
+                      @include background;
+                      overflow: hidden;
+                      border-radius: 50%;
+                    }
+                }
+
+                >div{
+                  display: inline-block;
+                  vertical-align: middle;
+                  margin: 8px 0 0 8px;
+                  font-size: 16px;
+                }
+
+              &__box{
+                position: absolute;
+                top: 38px;
+                z-index: 1;
+                width: 320px;
+                background: #fff;
+                box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+                font-size: 14px;
+                display: none;
+
+                .header-user{
+
+                  &__box{
+
+                    figure{
+                      padding: 28px 0 0;
+                      height: 80px;
+                      background:url(/images/user-bg.jpg);
+                      background-repeat: no-repeat;
+                      background-size: 320px 80px;
+
+                      div{
+                        overflow:hidden;
+                        width: 60px;
+                        height: 60px;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                      }
+
+                      figcaption{
+                        margin: 8px 0 0 0;
+                        padding: 0 8px;
+                        font-size: 16px;
+                      }
+                    }
+
+                    &__status{
+                      margin:20px 0 0;
+                      padding: 8px 8px 0;
+                      text-align: center;
+
+                      li{
+                        display: inline;
+                      }
+                    }
+
+                    &__points{
+                      width: 300px;
+                      margin:16px auto;
+                      border:1px solid #eee;
+                      background-color:#fafafa;
+
+                      a{
+                        padding: 0 8px;
+                        line-height: 40px;
+                        @include clearfix;
+
+
+                        .left{
+                          float: left;
+                        }
+
+                        .right{
+                          float:right;
+                        }
+                      }
+                    }
+                  }
+
+                  &__nav{
+                    .leftside_item{
+                      text-align: left;
+                    }
+                  }
+                }
+              }
+            }
+
+              .header-notice{
+                height: 32px;
+                display: inline-block;
+                font-size: 15px;
+                text-decoration: none;
+
+                &__box{
+                  position: absolute;
+                  top: 38px;
+                  z-index: 1;
+                  width: 320px;
+                  background: #fff;
+                  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+                  font-size: 14px;
+                  display: none;
+
+                  &--inner{
+                    position: relative;
+                    float: left;
+                    min-height: 80px;
+                    width:320px;
+                    padding: 16px;
+                    box-sizing:border-box;
+                    text-decoration: none;
+                    border-bottom: 1px solid #ccc;
+
+                      &:hover{
+                        @include background;
+                      }
+
+                      figure{
+                        float: left;
+                      }
+
+                      &__body{
+                        padding:0 40px 0 68px;
+                        text-align: left;
+
+                          &__text{
+                            display: block;
+                            max-height:4.4em;
+                            margin: 0 0 6px 0;
+                          }
+                      }
+
+                    .fa.fa-angle-right{
+                      position: absolute;
+                      top:40%;
+                      right:16px;
+                      font-size: 20px;
+                    }
+                  }
+                }
+              }
+
+            .header-todo-list{
+              display: block;
+              height: 32px;
+              font-size: 15px;
+              position: relative;
+              text-decoration: none;
+            }
+
+
+
+            .header-btn__red{
+              padding: 8px 10px;
+              line-height: 30px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              border-radius:4px;
+              text-decoration: none;
+            }
+
+            .header-btn__signup{
+              padding: 8px 10px;
+              border: 1px solid #0099e8;
+              background: #fff;
+              color: #0099e8;
+              text-shadow: none;
+              margin-left:6px;
+              border-radius:4px;
+              text-decoration: none;
+            }
+          }
         }
       }
     }
