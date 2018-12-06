@@ -1,0 +1,2 @@
+class Scategory < ApplicationRecord
+end
