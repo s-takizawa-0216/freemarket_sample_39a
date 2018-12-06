@@ -7,7 +7,7 @@
       %form.header-form{ action:"#"}
         %input.form__input{ placeholder: "キーワードから探す", type: "search"}
         %i.fa.fa-search
-    .header-nav__box
+    .header-nav__box.clearfix
       %nav.left__list
         %ul.left__list__ul
           %li.left__list__category.claerfix
@@ -110,6 +110,9 @@
 
         var menuBtn = $(".left__list__category"),
         menuContent = $(".left__list__category__pulldown__name");
+        menuBtn2 = $(".left__list__brand"),
+        menuContent2 = $(".left__list__brand__pulldown__name");
+
         menuBtn.mouseover(function(){
         menuContent.show();
         });
@@ -126,8 +129,6 @@
         $(this).find('ul').hide();
         });
 
-        var menuBtn2 = $(".left__list__brand"),
-        menuContent2 = $(".left__list__brand__pulldown__name");
         menuBtn2.mouseover(function(){
         menuContent2.show();
         });
@@ -136,14 +137,85 @@
         menuContent2.hide();
         });
 
+        var rightBtn = $(".mypage"),
+        rightContent = $(".header-mypage__box");
+
+        rightBtn.mouseover(function(){
+        rightContent.show();
+        })
+
+        rightContent.mouseout(function(){
+        rightContent.hide();
+        });
+
+        $(".notice").mouseover(function(){
+        $(".header-notice__box").show();
+        });
+
+        $(".notice").mouseout(function(){
+        $(".header-notice__box").hide();
+        });
 
         }, false);
-
-      .right__list
+      %div.right__list
         %ul.right__list__li
+          %li.mypage
+            %a.header-mypage{href:"#"}
+              %figure
+                %div
+                  = image_tag("/images/member_photo_noimage_thumb.png", height:"32",width:"32")
+              %div マイページ
+            %ul.header-mypage__box
+              .header-user__box
+                %figure
+                  %div
+                    = image_tag("/images/member_photo_noimage_thumb.png", height:"60",width:"60")
+                  %figcaption ユーザー名
+                %ul.header-user__box__status
+                  %li
+                    %a 評価: 0
+                  %li
+                    %a 出品: 0
+                %ul.header-user__box__points
+                  %li
+                    = link_to user_path, class:'clearfix' do
+                      .left 売上金
+                      .right ¥ 0
+                  %li
+                    = link_to user_path, class:'clearfix' do
+                      .left ポイント
+                      .right P 0
+              %ul.header-user__nav
+                %li.leftside__list2
+                  = link_to 'いいね！一覧' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 出品中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 取引中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 売却済み' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '購入した商品 - 取引中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '購入した商品 - 過去の取引' , "", class: 'leftside__item'
+                  %i.arrow__right >
+          %li.notice
+            %a.header-notice{href:"#"}
+              %i.far.fa-bell
+              %span お知らせ
+            %ul.header-notice__box
+              %li
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
           %li
-            %a.header-btn__red{href:"#"}
-              ログイン
-          %li
-            %a.header-btn__signup{href:"#"}
-              新規会員登録
+            %a.header-todo-list{href:"#"}
+              %i.fas.fa-check
+              %span やることリスト
