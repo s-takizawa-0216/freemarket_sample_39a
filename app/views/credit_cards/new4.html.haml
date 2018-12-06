@@ -1,0 +1,59 @@
+.aaa
+  .header2
+    .logo333-left
+      = image_tag("logo.svg", class: "logo333-left__item")
+    %ul.header2__ul
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
+      %li.header2__item
+        支払い情報
+        .header2__maru
+      %li.header2__item--red
+        住所入力
+        .header2__maru--red
+      %li.header2__item--red
+        電話番号認証
+        .header2__maru--red
+      %li.header2__item--red
+        会員情報
+        .header2__maru--red
+  .box7.clearfix
+    .box7__top
+      %p.box7__text 支払い方法
+    .box7__bottom
+      .form-yes4
+        = form_for root_path, html: {class: "form-yes4__f"} do |f|
+          .form-yes4__width
+            .margin-god
+            %p.form-yes4__label カード番号
+            %span.form-yes4__label-req 必須
+            = f.text_field :name, placeholder: "半角数字のみ", class: "form-yes4__n"
+            = image_tag("20150308002137.png", class: "form-yes4__image")
+          .form-yes4__width
+            .margin-god
+            %p.form-yes4__label 有効期限
+            %span.form-yes4__label-req 必須
+            .inline-god
+            = f.date_select :name, {use_month_numbers: true, discard_day: true, discard_year: true}, {class: "form-yes4__half"}
+            .form-yes4__label-months 月
+            = f.date_select :name, {discard_day: true, discard_month: true, start_year: 2018}, {class: "form-yes4__half"}
+            .form-yes4__label-years 年
+          .form-yes4__width
+            .margin-god
+            %p.form-yes4__label セキュリティコード
+            %span.form-yes4__label-req 必須
+            = f.text_field :name, placeholder: "カード背面4桁もしくは3桁の番号", class: "form-yes4__n"
+            %p.form-yes4__blue-text
+              %i.fas.fa-question-circle
+              カード裏面の番号とは?
+            .margin-god__b
+          = f.submit class: "form-yes4__b", value: "次へ進む"
+  .bottom-list7
+    %ul.bottom-list7__ul
+      %li.bottom-list7__item プライバシーポリシー
+      %li.bottom-list7__item メルカリ利用規約
+      %li.bottom-list7__item 特定商取引に関する表記
+    = image_tag("logo-gray", class: "bottom-list7__image clearfix")
+    %p.bottom-list7__footer © 2018 Mercari
+_

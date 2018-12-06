@@ -1,6 +1,6 @@
 .aaa
   .logo333
-    = image_tag("logo.svg", class: "logo333__item")
+    = image_tag("/images/logo.svg", class: "logo333__item")
   .box4444
     .box4444__top
       %p.box4444__sas アカウントをお持ちでない方はこちら
@@ -17,8 +17,10 @@
       .form-yes
         = form_for root_path, html: {class: "form-yes__f"} do |f|
           = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
+          .margin-god-c
           = f.text_field :password, placeholder: "パスワード",class: "form-yes__n"
-          .robot 私はロボットではありません
+          .robot
+            .g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
           = f.submit class: "form-yes__b", value: "ログイン"
       %p.blue1 パスワードをお忘れの方
   .bottom-list7
@@ -26,5 +28,5 @@
       %li.bottom-list7__item プライバシーポリシー
       %li.bottom-list7__item メルカリ利用規約
       %li.bottom-list7__item 特定商取引に関する表記
-    = image_tag("logo-gray", class: "bottom-list7__image clearfix")
+    = image_tag("/images/logo-gray", class: "bottom-list7__image clearfix")
     %p.bottom-list7__footer © 2018 Mercari

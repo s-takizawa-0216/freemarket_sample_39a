@@ -1,7 +1,4 @@
-.defaultcontainer
-
- .header header
- .header__nav header
+= render partial: "mercaries/header"
 
 .main-content
  %main.r-content-clearfix
@@ -42,5 +39,5 @@
 
   = render partial: "users/left-bar"
 
- .footer footer
- .footer__main footer
+ = render partial: "mercaries/aside"
+ = render partial: "mercaries/footer"
