@@ -12,6 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2018_12_06_123535) do
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "brands_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "bland_id", null: false
+    t.integer "large_category_id", null: false
+    t.integer "medium_category_id", null: false
+    t.integer "small_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "user_id", null: false
@@ -44,14 +59,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_123535) do
     t.index ["saler_id"], name: "index_evaluations_on_saler_id"
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.text "image", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
@@ -60,8 +67,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_123535) do
     t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "image_id", null: false
-    t.index ["image_id"], name: "index_items_on_image_id"
     t.index ["name"], name: "index_items_on_name"
   end
 
@@ -88,6 +93,13 @@ ActiveRecord::Schema.define(version: 2018_12_06_123535) do
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
+  create_table "medium_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_medium_categories_on_name"
+  end
+
   create_table "scategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -104,6 +116,13 @@ ActiveRecord::Schema.define(version: 2018_12_06_123535) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_shipping_methods_on_item_id"
+  end
+
+  create_table "small_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_small_categories_on_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -141,7 +160,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_123535) do
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "credit_cards", "users"
-  add_foreign_key "images", "items"
   add_foreign_key "shipping_methods", "items"
   add_foreign_key "users_details", "users"
 end
