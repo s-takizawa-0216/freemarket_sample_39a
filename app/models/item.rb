@@ -10,4 +10,5 @@ class Item < ApplicationRecord
   has_one :shipping_method
   has_one :size
   has_many :likes
+  has_many :images
 end
