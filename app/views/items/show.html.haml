@@ -1,0 +1,21 @@
+/ 本来はuserのdeleteメソッドのビュー
+%head
+  %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+  %link{ rel:"stylesheet",href:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" }
+%body
+.defaultcontainer
+
+  = render partial:'mercaries/header-login'
+  %nav.bread-crumbs
+    %ul
+      %li パンくず
+  .main-content
+    %main.r-content-clearfix
+      .rightcontent
+        .logout-contain
+          = form_for root_path do |f|
+            = f.submit :'ログアウト', class:'sell__btn__red'
+      = render partial:'users/left-bar'
+  = render partial:'mercaries/sell-button'
+  = render partial:'mercaries/app-banner'
+  = render partial:'mercaries/footer'
