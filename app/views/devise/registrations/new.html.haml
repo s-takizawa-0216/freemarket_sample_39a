@@ -1,21 +1,57 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.aaa
+  .header2
+    .logo333-left
+      = image_tag("/images/logo.svg", class: "logo333-left__item")
+    %ul.header2__ul
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
+      %li.header2__item
+        支払い情報
+        .header2__maru
+      %li.header2__item
+        住所入力
+        .header2__maru
+      %li.header2__item
+        電話番号認証
+        .header2__maru
+      %li.header2__item
+        会員情報
+        .header2__maru
+  .box44444.clearfix
+    .box44444__top
+      %p.box44444__text 会員情報入力
+    .box44444__bottom
+      .form-yes
+        = form_for( @user, html: {method: 'POST'} ) do |f|
+          .form-yes__width
+            %p.form-yes__label ニックネーム
+            %span.form-yes__label-req 必須
+            = f.text_field :name, placeholder: "例)メルカリ太郎", class: "form-yes__n"
+            .margin-god-c
+          .form-yes__width
+            %p.form-yes__label メールアドレス
+            %span.form-yes__label-req 必須
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "form-yes__n"
+            .margin-god-c
+          .form-yes__width
+            %p.form-yes__label パスワード
+            %span.form-yes__label-req 必須
+            = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "form-yes__n"
+            .margin-god-c
+          .form-yes__width
+            %p.form-yes__label パスワード（確認）
+            %span.form-yes__label-req 必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "form-yes__n"
+            .margin-god-c
+          .robot-2
+            .robot-2__robotro.g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
+          .margin-god-c
+          = f.submit class: "form-yes__b", value: "次へ進む"
+  .bottom-list7
+    %ul.bottom-list7__ul
+      %li.bottom-list7__item プライバシーポリシー
+      %li.bottom-list7__item メルカリ利用規約
+      %li.bottom-list7__item 特定商取引に関する表記
+    = image_tag("/images/logo-gray.svg", class: "bottom-list7__image clearfix")
+    %p.bottom-list7__footer © 2018 Mercari

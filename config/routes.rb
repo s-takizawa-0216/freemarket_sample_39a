@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'mercaries#index'
-  resources :mercaries
+  root 'items#index'
   resources :items
   resources :users do
     collection do
@@ -14,6 +13,9 @@ Rails.application.routes.draw do
     collection do
       get 'new3'
     end
+  end
+  resources :users_details do
+    resources :credit_cards
   end
   resources :credit_cards do
     collection do
