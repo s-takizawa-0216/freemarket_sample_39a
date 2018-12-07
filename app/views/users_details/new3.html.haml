@@ -1,0 +1,78 @@
+.aaa
+  .header2
+    .logo333-left
+      = image_tag("/images/logo.svg", class: "logo333-left__item")
+    %ul.header2__ul
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
+      %li.header2__item
+        支払い情報
+        .header2__maru
+      %li.header2__item
+        住所入力
+        .header2__maru
+      %li.header2__item--red
+        電話番号認証
+        .header2__maru--red
+      %li.header2__item--red
+        会員情報
+        .header2__maru--red
+  .box3.clearfix
+    .box3__top
+      %p.box3__text 住所入力
+    .box3__bottom
+      .form-yes2
+        = form_for root_path, html: {class: "form-yes__f"} do |f|
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label お名前
+            %span.form-yes2__label-req 必須
+            = f.text_field :name, placeholder: "例)山田", class: "form-yes2__n"
+            = f.text_field :name, placeholder: "例）彩", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label お名前カナ
+            %span.form-yes2__label-req 必須
+            = f.text_field :name, placeholder: " 例)ヤマダ", class: "form-yes2__n"
+            = f.text_field :name, placeholder: "例)アヤ", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 郵便番号
+            %span.form-yes2__label-req 必須
+            = f.text_field :name, placeholder: "例)123-4567", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 都道府県
+            %span.form-yes2__label-req 必須
+            = f.select :addres, UsersDetail.addres, {}, {class: "form-yes2__y"}
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 市区町村
+            %span.form-yes2__label-req 必須
+            = f.text_field :name, placeholder: "例)横浜市緑区", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 番地
+            %span.form-yes2__label-req 必須
+            = f.text_field :name, placeholder: "例)青山1-1-1", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 建物名
+            %span.form-yes2__label-any 任意
+            = f.text_field :name, placeholder: "例)柳ビル103", class: "form-yes2__n"
+          .form-yes2__width
+            .margin-god
+            %p.form-yes2__label 電話
+            %span.form-yes2__label-any 任意
+            = f.text_field :name, placeholder: "例)09012345678", class: "form-yes2__n"
+            .margin-god
+          = f.submit class: "form-yes2__b", value: "次へ進む"
+  .bottom-list7
+    %ul.bottom-list7__ul
+      %li.bottom-list7__item プライバシーポリシー
+      %li.bottom-list7__item メルカリ利用規約
+      %li.bottom-list7__item 特定商取引に関する表記
+    = image_tag("/images/logo-gray.svg", class: "bottom-list7__image clearfix")
+    %p.bottom-list7__footer © 2018 Mercari
+_

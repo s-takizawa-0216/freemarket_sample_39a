@@ -19,6 +19,30 @@ select {
 .main-content {
   background-color: #EEEEEE;
   padding-top: 40px;
+
+  .logout-contain{
+    padding: 64px;
+
+    .sell__btn__red{
+      @include font-family;
+      line-height: 48px;
+      font-size: 16px;
+      margin: 0 auto;
+      width: 70%;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      cursor: pointer;
+      display:block;
+      text-align: center;
+      color: white;
+
+        &:hover{
+          opacity: 0.7;
+          transition: all ease-out .3s;
+        }
+    }
+  }
 }
 
 .r-content-clearfix {
@@ -189,8 +213,8 @@ select {
 
 
 .leftside {
+  @include font-family;
   width: 280px;
-  height: 1252px;
   float:left;
   margin-right: 40px;
    &__list {
@@ -208,6 +232,7 @@ select {
     display: block;
     color: #333;
     text-decoration: none;
+    text-align: left;
    }
    &__head {
     margin-top: 40px;

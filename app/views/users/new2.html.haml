@@ -1,0 +1,45 @@
+.aaa
+  .header2
+    .logo333-left
+      = image_tag("/images/logo.svg", class: "logo333-left__item")
+    %ul.header2__ul
+      %li.header2__last-item
+        %p.header2__last-item__right 完了
+        .header2__maru2.clearfix
+      %li.header2__item
+        支払い情報
+        .header2__maru
+      %li.header2__item
+        住所入力
+        .header2__maru
+      %li.header2__item
+        電話番号認証
+        .header2__maru
+      %li.header2__item--red
+        会員情報
+        .header2__maru--red
+  .box999.clearfix
+    .box999__top
+      %p.box999__text 電話番号入力
+    .box999__bottom
+      .form-tel
+        = form_for root_path, html: {class: "form-tel__f"} do |f|
+          .form-tel__width
+            %p.form-tel__label 携帯電話の番号
+            = f.text_field :name, placeholder: "携帯電話の番号を入力", class: "form-tel__n"
+            %p.form-tel__text
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .form-tel__width
+            = f.submit class: "form-tel__b", value: "SMSを送信する"
+            %p.form-tel__text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+    .box999__req3
+      %p.box999__req4
+        電話番号の確認が必要な理由
+        %i.fas.fa-chevron-right
+  .bottom-list7
+    %ul.bottom-list7__ul
+      %li.bottom-list7__item プライバシーポリシー
+      %li.bottom-list7__item メルカリ利用規約
+      %li.bottom-list7__item 特定商取引に関する表記
+    = image_tag("/images/logo-gray.svg", class: "bottom-list7__image clearfix")
+    %p.bottom-list7__footer © 2018 Mercari
