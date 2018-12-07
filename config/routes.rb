@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get 'new3'
     end
   end
+  resources :users_details do
+    resources :credit_cards
+  end
   resources :credit_cards do
     collection do
       get 'new4'
