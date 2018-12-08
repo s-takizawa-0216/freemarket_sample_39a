@@ -1,0 +1,147 @@
+%header.header
+  .header-inner
+    .logo-bar
+      %h1.logo
+        %a{href: "https://www.mercari.com/jp/"}
+          = image_tag("/images/logo.svg",alt: "mercari", height: "36", width: "134")
+      %form.header-form{ action:"#"}
+        %input.form__input{ placeholder: "キーワードから探す", type: "search"}
+        %i.fa.fa-search
+    .header-nav__box
+      %nav.left__list
+        %ul.left__list__ul
+          %li.left__list__category.claerfix
+            %h2
+              %a{href: "https://www.mercari.com/jp/category/"} カテゴリーから探す
+            %ul.left__list__category__pulldown
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} レディース
+                  %ul.left__list__category__pulldown__name__child
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} トップス
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} ジャケット/アウター
+
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} パンツ
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} スカート
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} 靴
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} ルームウェア/パジャマ
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} レッグウェア
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} 帽子
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} バッグ
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} アクセサリー
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} ヘアアクセサリー
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} 小物
+                    %li.left__list__category__pulldown__name__child--li
+                      %a{href:"#"} 時計
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} メンズ
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} ベビー・キッズ
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} インテリア・住まい
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} 本・音楽・ゲーム
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} おもちゃ・ホビー
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} コスメ・香水・美容
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} 家電・スマホ・カメラ
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} スポーツ・レジャー
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} ハンドメイド
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} チケット
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} 自転車・オートバイ
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} その他
+              %li.left__list__category__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/category/1/"} カテゴリ
+          %li.left__list__brand
+            %a{href: "https://www.mercari.com/jp/brand/"} ブランドから探す
+            %ul.left__list__brand__pulldown
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/658/"} シャネル
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/857/"} ナイキ
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/1326/"} ルイ ヴィトン
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/1620/"} シュプリーム
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/99/"} アディダス
+              %li.left__list__brand__pulldown__name
+                %h3
+                  %a{href: "https://www.mercari.com/jp/brand/"} ブランド一覧
+      %script
+        window.addEventListener('load', function(){
+
+        var menuBtn = $(".left__list__category"),
+        menuContent = $(".left__list__category__pulldown__name");
+        menuBtn.mouseover(function(){
+        menuContent.show();
+        });
+
+        menuBtn.mouseout(function(){
+        menuContent.hide();
+        });
+
+        menuContent.mouseover(function(){
+        $(this).find('ul').show();
+        });
+
+        menuContent.mouseout(function(){
+        $(this).find('ul').hide();
+        });
+
+        var menuBtn2 = $(".left__list__brand"),
+        menuContent2 = $(".left__list__brand__pulldown__name");
+        menuBtn2.mouseover(function(){
+        menuContent2.show();
+        });
+
+        menuBtn2.mouseout(function(){
+        menuContent2.hide();
+        });
+
+
+        }, false);
+
+      .right__list
+        %ul.right__list__li
+          %li
+            = link_to 'ログイン' , new_user_path , class: "header-btn__red"
+          %li
+            = link_to '新規登録' , users_path , class: "header-btn__signup"
