@@ -8,15 +8,16 @@
       .box444__rr
         .box444__item
           %i.far.fa-envelope.box444__awe--black
-          .box444__item--black メールアドレスで登録
+          .box444__item--black
+          = link_to 'メールアドレスで登録' , new1_users_path
       .box444__er
         .box444__item
           %i.fab.fa-facebook.box444__awe
-          Facebookで登録
+          = link_to 'facebookで登録' ,user_facebook_omniauth_authorize_path
       .box444__wr
         .box444__item
           %i.fab.fa-google-plus-g.box444__awe
-          Googoleで登録
+          = link_to 'Googleで登録' , user_google_oauth2_omniauth_authorize_path
   .bottom-list7
     %ul.bottom-list7__ul
       %li.bottom-list7__item プライバシーポリシー
