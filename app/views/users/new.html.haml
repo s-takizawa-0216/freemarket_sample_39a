@@ -4,16 +4,17 @@
   .box4444
     .box4444__top
       %p.box4444__sas アカウントをお持ちでない方はこちら
-      %p.box4444__signup 新規会員登録
+      %p.box4444__signup
+        = link_to '新規会員登録' , new_user_registration_path
     .box4444__bottom
       .box4444__er
         .box4444__item
           %i.fab.fa-facebook.box4444__awe
-          Facebookで登録
+          = link_to 'facebookでログイン' ,user_facebook_omniauth_authorize_path
       .box4444__wr
         .box4444__item
           %i.fab.fa-google-plus-g.box4444__awe
-          Googoleで登録
+          = link_to 'Googleでログイン' , user_google_oauth2_omniauth_authorize_path
       .form-yes
         = form_for root_path, html: {class: "form-yes__f"} do |f|
           = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
@@ -30,3 +31,4 @@
       %li.bottom-list7__item 特定商取引に関する表記
     = image_tag("/images/logo-gray", class: "bottom-list7__image clearfix")
     %p.bottom-list7__footer © 2018 Mercari
+
