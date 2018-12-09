@@ -9,14 +9,14 @@
     .box4444__bottom
       .box4444__er
         .box4444__item
-          %i.fab.fa-facebook.box4444__awe
+          = fa_icon ("facebook-square") ,class: "box444__awe"
           = link_to 'facebookでログイン' ,user_facebook_omniauth_authorize_path
       .box4444__wr
         .box4444__item
-          %i.fab.fa-google-plus-g.box4444__awe
+          = fa_icon ("google"), class: "box444__awe"
           = link_to 'Googleでログイン' , user_google_oauth2_omniauth_authorize_path
       .form-yes
-        = form_for root_path, html: {class: "form-yes__f"} do |f|
+        = form_for root_path, class: "form-yes__f" do |f|
           = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
           .margin-god-c
           = f.text_field :password, placeholder: "パスワード",class: "form-yes__n"
