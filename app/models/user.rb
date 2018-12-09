@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
 # facebookログインの実装部分
  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(provider: auth.provider, uid: auth.uid).first
     unless user
       user = User.create(name:auth.extra.raw_info.name,
                           provider:auth.provider,
