@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
+# 仮置き用のコントローラー
+  get 'i/purchased' => 'i/purchased'
+
   devise_for :users
   root 'items#index'
+
   resources :items
   resources :users do
     collection do
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
       get 'new2'
     end
   end
+
   resources :users_details do
       get 'create'
     collection do

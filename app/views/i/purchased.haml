@@ -1,30 +1,16 @@
 .aaa
   .logo333
-    = image_tag("logo.svg", class: "logo333__item")
-  .box4444
-    .box4444__top
-      %p.box4444__sas アカウントをお持ちでない方はこちら
-      %p.box4444__signup 新規会員登録
-    .box4444__bottom
-      .box4444__er
-        .box4444__item
-          %i.fab.fa-facebook.box4444__awe
-          Facebookで登録
-      .box4444__wr
-        .box4444__item
-          %i.fab.fa-google-plus-g.box4444__awe
-          Googoleで登録
-      .form-yes
-        = form_for root_path, html: {class: "form-yes__f"} do |f|
-          = f.text_field :name, placeholder: "メールアドレス", class: "form-yes__n"
-          = f.text_field :password, placeholder: "パスワード",class: "form-yes__n"
-          .robot 私はロボットではありません
-          = f.submit class: "form-yes__b", value: "ログイン"
-      %p.blue1 パスワードをお忘れの方
+    = image_tag("/images/logo.svg", class: "logo333__item")
+  .purchased-box
+    .purchased-box__top
+      %p.purchased-box__text ご購入ありがとうございます
+    .purchased-box__bottom
+      .purchased-box__bottom__text
+        = link_to("商品画面へ戻る","https://item.mercari.com/jp/m70068440240/" ,class: "purchased-box__bottom__text__a")
   .bottom-list7
     %ul.bottom-list7__ul
       %li.bottom-list7__item プライバシーポリシー
       %li.bottom-list7__item メルカリ利用規約
       %li.bottom-list7__item 特定商取引に関する表記
-    = image_tag("logo-gray", class: "bottom-list7__image clearfix")
+    = image_tag("/images/logo-gray.svg", class: "bottom-list7__image clearfix")
     %p.bottom-list7__footer © 2018 Mercari

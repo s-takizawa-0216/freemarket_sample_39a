@@ -4,6 +4,7 @@
   / %script{ src: "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
   %link{ rel:"stylesheet",href:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" }
 %body
+  / %script{ src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
   %script{ src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js" }
 
 %header.header
@@ -199,12 +200,12 @@
         - @items.each do |item|
           %section.item-box__content
             %figure.item-box__content__image
-              = image_tag("")#{item.image}
+              = image_tag ("#{item.images.first.image}")
             .item-box__content__detail
               %h3.item-box__content__detail__name
                 = item.name
               .item-box__content__detail__inner
-                %h3.item-box__content__detail__inner__price
+                %h3#textBox-price.item-box__content__detail__inner__price
                   = "¥ #{item.price}"
                 %p.item-box__content__detail__inner__tax
                   (税込)
