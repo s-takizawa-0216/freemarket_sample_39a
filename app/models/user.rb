@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
 # グーグルログインの実装部分
    def self.find_for_google_oauth2(auth)
-    user = User.where(email: auth.info.email).first
+    user = User.find_by(email: auth.info.email)
 
     unless user
       user = User.create(name:     auth.info.name,
@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
 # facebookログインの実装部分
  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
     unless user
       user = User.create(name:auth.extra.raw_info.name,
                           provider:auth.provider,
