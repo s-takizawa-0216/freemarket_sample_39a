@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
+<<<<<<< HEAD
     @items = Item.all
+=======
+    @items = Item.order("created_at DESC")
+>>>>>>> yuuki999/master
   end
 
   def show
