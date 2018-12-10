@@ -185,6 +185,8 @@ a{
 
       .right__list{
          float:right;
+         position: relative;
+         z-index: 5;
 
         .right__list__li{
           position: relative;
