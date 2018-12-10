@@ -1,0 +1,194 @@
+.rightcontent {
+  &__mypage {
+    background-image:url("/images/user-bg.png");
+    height: 200px;
+  }
+  &__mypage2 {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+  }
+  &__mypage--icon {
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  &__mypage--name {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__mypagenumber {
+    text-align: center;
+    margin-top: 10px;
+  }
+  &__mypage--evaluation {
+    display: inline-block;
+    padding: 5px;
+  }
+  &__mypage--exhibit {
+    display: inline-block;
+    padding: 5px;
+  }
+}
+
+.rightcontent1 {
+  float: right;
+}
+
+.mypage {
+  background-color: white;
+  width: 100%;
+  &__content {
+    width: 100%;
+  }
+  &__body {
+    margin: 0 40px 0 68px;
+  }
+  &__text {
+    overflow: hidden;
+    display: block;
+    max-height: 40px;
+    line-height: 40px;
+  }
+  &__link1 {
+    width: 668px;
+    height:57px;
+    background-color: #ddd;
+    margin: 15px auto;
+    line-height: 57px;
+    text-align: center;
+  }
+  &__body-2 {
+    margin: 0 40px 0 68px;
+  }
+  &__text-2 {
+    overflow: hidden;
+    display: block;
+    max-height: 40px;
+    line-height: 40px;
+  }
+}
+
+.rightcontent3{
+  margin-top: 40px;
+  background-color: white;
+  &__head {
+    height: 50px;
+    font-size: 16px;
+    padding: 8px 24px;
+    text-align: left;
+    line-height: 50px;
+    font-weight: bold;
+  }
+}
+
+.figure-size {
+  height: 48px;
+  width: 48px;
+  float: left;
+  overflow: hidden;
+}
+
+
+.tab li {
+  color: #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  list-style: none;
+  background-color: #ddd ;
+  width: 347px;
+  display: inline-block;
+  height: 73px;
+  line-height: 73px;
+  text-align: center;
+}
+
+.tab li.active {
+  border-top: 1px solid red;
+  background: white;
+  cursor: auto;
+  width: 347px;
+  display: inline-block;
+}
+
+.area ul {
+  display: none;
+}
+
+.area ul.show {
+  display: block;
+}
+
+.text {
+  border-bottom: 1px solid #eee;
+  display: block;
+  min-height: 80px;
+  color: #333;
+}
+
+.text1 {
+  padding: 60px;
+  text-align: center;
+}
+
+.id {
+  height: 235px;
+}
+
+
+.tab-2 li {
+  color: #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  list-style: none;
+  background-color: #ddd;
+  width: 347px;
+  display: inline-block;
+  height: 73px;
+  line-height: 73px;
+  text-align: center;
+}
+
+.tab-2 li.active-2 {
+  border-top: 1px solid red;
+  background: white;
+  cursor: auto;
+  width: 347px;
+  display: inline-block;
+}
+
+.area-2 ul {
+  display: none;
+}
+
+.area-2 ul.show-2 {
+  display: block;
+}
+
+.text-2 {
+  border-bottom: 1px solid #eee;
+  display: block;
+  min-height: 80px;
+  color: #333;
+}
+
+.text1-2 {
+  padding: 60px;
+  text-align: center;
+}
+
+.id-2 {
+  height: 235px;
+}
+
+.mercari-log16 {
+  position: relative;
+  left:40%;
+  top:20px;
+}
