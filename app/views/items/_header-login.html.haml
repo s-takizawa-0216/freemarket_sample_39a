@@ -6,7 +6,7 @@
           = image_tag("/images/logo.svg",alt: "mercari", height: "36", width: "134")
       %form.header-form{ action:"#"}
         %input.form__input{ placeholder: "キーワードから探す", type: "search"}
-        %i.fa.fa-search
+        = fa_icon ("search")
     .header-nav__box.clearfix
       %nav.left__list
         %ul.left__list__ul
@@ -153,9 +153,8 @@
                   = link_to '購入した商品 - 過去の取引' , "", class: 'leftside__item'
                   %i.arrow__right >
           %li.notice
-            %a.header-notice{href:"#"}
-              %i.far.fa-bell
-              %span お知らせ
+            = link_to 'お知らせ' , '#' ,class: 'header-notice'
+            = fa_icon ("bell")
             %ul.header-notice__box
               %li
                 = render partial: 'mercaries/header-login-notice-inner'
@@ -164,6 +163,5 @@
                 = render partial: 'mercaries/header-login-notice-inner'
                 = render partial: 'mercaries/header-login-notice-inner'
           %li
-            %a.header-todo-list{href:"#"}
-              %i.fas.fa-check
-              %span やることリスト
+            = fa_icon("check")
+            = link_to 'やる事リスト' , '#' , class: 'header-todo-list'
