@@ -148,6 +148,8 @@
         }, false);
       %ul.right__list
         %li
+          = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "header-btn__red")
+        %li
           = link_to("ログイン","#", class: "header-btn__red")
         %li
           = link_to("新規会員登録","#", class: "header-btn__signup")
