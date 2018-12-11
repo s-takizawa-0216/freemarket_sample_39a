@@ -7,20 +7,21 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def create
-    @item = Item.new(name: item_params[:name], price: item_params[:price], detail: item_params[:detail], condition: item_params[:condition])
-    @item.save
+  def new
+    @item = Item.new
+    @item.build_shipping_method
   end
 
-  def new
-    @item = Item.new(name: item_params[:name], price: item_params[:price], detail: item_params[:detail], condition: item_params[:condition],size: item_params[:size])
-    @item.save
+  def create
+    @item = Item.new(item_params)
+    @item.build_shipping_method
+    @item.save!
   end
 
   private
 
   def item_params
-    params.permit(:name, :price, :detail, :condition)
+    params.require(:item).permit(:name, :price, :detail, :condition, :size, :lcategory_id, :mcategory_id,:scategory_id, shipping_method_attributes: [:id, :burden_fee, :days_to_arrival, :prefecuture])
   end
 
 end
