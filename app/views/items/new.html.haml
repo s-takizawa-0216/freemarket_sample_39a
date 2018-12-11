@@ -14,7 +14,8 @@
               %h3.single-main__content__form__item__title 出品画像
               %p 最大４枚までアップロードできます
               .single-main__content__form__item__image
-                = f.label :image, class:"upload-box"
+                = f.label :image, class:"upload-box" do
+                  = f.file_field :image, class: 'hidden'
                 %pre ドラッグアンドドロップまたはクリックしてファイルをアップロード
             .single-main__content__form__item
               .single-main__content__form__item__detail
@@ -38,6 +39,11 @@
                   %div
                     .select-wrap
                       = f.select :scategory_id, Scategory.all.map{|o| [o.name, o.id]},prompt:"---"
+                .single-main__content__form__item__detail
+                  %label サイズ
+                  %div
+                    .select-wrap
+                      = f.select :size,[["L","L"],["M","M"],["S","S"]],prompt:"---"
                 .single-main__content__form__item__detail
                   %label 商品の状態
                   %div
