@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.build_shipping_method
     @item.save!
   end
 
