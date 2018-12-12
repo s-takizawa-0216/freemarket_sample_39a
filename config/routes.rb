@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-# 仮置き用のコントローラー
-  get 'i/purchased' => 'i/purchased'
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
-  devise_for :users
+
   root 'items#index'
+
+  get 'users/new'
+  get 'users/user_profile'
+  get 'users/user_confilm'
+  get 'users/credit'
+  get 'users/:id' => 'users#show'
 
   resources :items
   resources :users do
