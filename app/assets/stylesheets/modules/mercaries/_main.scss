@@ -83,8 +83,6 @@
 
   }
   .contents{
-
-    height:500px;
     width:100%;
     padding-top:30px;
 
@@ -131,24 +129,24 @@
           box-sizing:border-box;
           overflow: hidden;
           position: relative;
-          font-weight: 400;
+          // font-weight: 400;
           word-break: break-word;
           white-space: normal;
           padding: 16px;
           background-color: white;
 
-
           &__name{
-            padding-bottom: 20px;
-            color: #424242
+            color: #424242;
+            height: 3em;
+            line-height: 1.5;
           }
 
           &__inner{
 
             &__price{
-              font-size: 20px;
+              font-size: 16px;
               display: inline-block;
-              font-weight: 600;
+              // font-weight: 600;
             }
             &__tax{
               font-size:10px;
