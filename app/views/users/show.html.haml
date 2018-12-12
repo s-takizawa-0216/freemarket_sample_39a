@@ -3,7 +3,7 @@
 
 
 %body
-= render partial: "items/header"
+= render partial: "items/header-login"
 
 .main-content
   %main.r-content-clearfix
@@ -11,7 +11,8 @@
       %section.rightcontent__mypage
         %figure.rightcontent__mypage2
           =image_tag("/images/member_photo_noimage_thumb.png" ,class: "rightcontent__mypage--icon" , size: "60x60" , alt: "user")
-        %h2.rightcontent__mypage--name  sample name
+        %h2.rightcontent__mypage--name
+          = current_user.name
         .rightcontent__mypagenumber
           .rightcontent__mypage--evaluation  評価
           .rightcontent__mypage--exhibit     出品数
@@ -88,5 +89,5 @@
 
     = render partial: "users/left-bar"
 
-  = render partial: "mercaries/aside"
+  = render partial: "mercaries/up-footer"
   = render partial: "items/footer"
