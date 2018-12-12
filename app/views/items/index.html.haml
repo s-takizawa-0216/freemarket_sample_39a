@@ -9,6 +9,7 @@
   = link_to "ログアウト", destroy_user_session_path, method: :delete
 
 
+
 - if user_signed_in?
   = render partial: 'items/header-login'
 
@@ -21,10 +22,10 @@
       .swiper-wrapper
         .swiper-slide
           = link_to do
-            = image_tag("/images/top-banner-kusanagi.jpg", class: "banner-image")
+            = image_tag "/images/top-banner-kusanagi.jpg", class: "banner-image"
         .swiper-slide
           = link_to do
-            = image_tag("/images/top-banner-2.png", class: "banner-image")
+            = image_tag "/images/top-banner-2.png", class: "banner-image"
         .swiper-slide
           .swiper-slide__content
             %h3
@@ -36,12 +37,12 @@
               %br
               購入時も安心な独自システムのアプリです
             .swiper-slide__content__link
-              = link_to("https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",class: "swiper-slide__content__link__itunes" ) do
-                = image_tag("/images/app-store.svg", width: "170")
-              = link_to("https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja",class: "swiper-slide__content__link__android") do
-                = image_tag("/images/google-play.svg",height: "50", width: "170")
-            = image_tag("/images/main_content_pc.png")
-          = image_tag("/images/main_bg_pc.jpg",class: "swiper-slide__bg")
+              = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",class: "swiper-slide__content__link__itunes" do
+                = image_tag "/images/app-store.svg", width: "170"
+              = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja",class: "swiper-slide__content__link__android" do
+                = image_tag "/images/google-play.svg",height: "50", width: "170"
+            = image_tag "/images/main_content_pc.png"
+          = image_tag "/images/main_bg_pc.jpg",class: "swiper-slide__bg"
       .swiper-pagination
       .swiper-button-prev
       .swiper-button-next
@@ -49,60 +50,16 @@
   %section.contents
     %h2.pickup-header ピックアップカテゴリー
     .pickup-items
-      %h3.pickup-items__title
-        = link_to("レディース新着アイテム","#")
-      .item-box
-        - @items.each do |item|
-          %section.item-box__content
-            %figure.item-box__content__image
-              = image_tag("")#{item.image}
-            .item-box__content__detail
-              %h3.item-box__content__detail__name
-                = item.name
-              .item-box__content__detail__inner
-                %h3.item-box__content__detail__inner__price
-                  = "¥ #{item.price}"
-                %p.item-box__content__detail__inner__tax
-                  (税込)
-        / %section.item-box__content
-        /   %figure.item-box__content__image
-        /     = image_tag("")#m61013437077_1.jpg
-        /   .item-box__content__detail
-        /     %h3.item-box__content__detail__name
-        /       新品 未使用 H&M クリスマス ピアス 6点セット
-        /     .item-box__content__detail__inner
-        /       %h3.item-box__content__detail__inner__price
-        /         ¥ 500
-        /       %p.item-box__content__detail__inner__tax
-        /         (税込)
-        / %section.item-box__content
-        /   %figure.item-box__content__image
-        /     = image_tag("")#m61013437077_1.jpg
-        /   .item-box__content__detail
-        /     %h3.item-box__content__detail__name
-        /       新品 未使用 H&M クリスマス ピアス 6点セット
-        /     .item-box__content__detail__inner
-        /       %h3.item-box__content__detail__inner__price
-        /         ¥ 500
-        /       %p.item-box__content__detail__inner__tax
-        /         (税込)
-        / %section.item-box__content
-        /   %figure.item-box__content__image
-        /     = image_tag("")#m61013437077_1.jpg
-        /   .item-box__content__detail
-        /     %h3.item-box__content__detail__name
-        /       新品 未使用 H&M クリスマス ピアス 6点セット
-        /     .item-box__content__detail__inner
-        /       %h3.item-box__content__detail__inner__price
-        /         ¥ 500
-        /       %p.item-box__content__detail__inner__tax
-        /         (税込)
-      .item-box__viewall
-        = link_to("すべての商品を見る","#")
+      = render partial: 'pickup-category'
+  %section.contents
+    %h2.pickup-header ピックアップブランド
+    .pickup-items
+      = render partial: 'pickup-brand'
 
 
   %a.btn-exhibit{href:"#"}
     .sell 出品
+
     = fa_icon ("camera")
 =  render partial: 'mercaries/up-footer.html.haml'
 =  render partial: 'items/footer.html.haml'
