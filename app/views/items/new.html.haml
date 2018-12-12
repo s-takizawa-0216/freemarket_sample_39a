@@ -13,10 +13,12 @@
             .single-main__content__form__item
               %h3.single-main__content__form__item__title 出品画像
               %p 最大４枚までアップロードできます
-              .single-main__content__form__item__image
-                = f.label :image, class:"upload-box" do
-                  = f.file_field :image, class: 'hidden'
-                %pre ドラッグアンドドロップまたはクリックしてファイルをアップロード
+              = f.fields_for :images do |fini|
+                .single-main__content__form__item__image
+                  = fini.label :image, multiple: "true",class:"upload-box" do
+                    画像はこちら
+                    = fini.file_field :image, onchange:"previewFile()", class: 'hidden'
+                    = image_tag "", height:"140", width:"140",class: 'item_image'
             .single-main__content__form__item
               .single-main__content__form__item__detail
                 %label 商品名
