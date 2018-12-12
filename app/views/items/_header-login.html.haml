@@ -112,7 +112,7 @@
               %figure
                 %div
                   = image_tag("/images/member_photo_noimage_thumb.png", height:"32",width:"32")
-              %div マイページ
+              = link_to 'マイページ' , user_path(current_user) , class: 'div'
             %ul.header-mypage__box
               .header-user__box
                 %figure
