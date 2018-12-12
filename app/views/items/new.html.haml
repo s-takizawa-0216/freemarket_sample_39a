@@ -49,27 +49,25 @@
                   %div
                     .select-wrap
                       = f.select :condition,[["新品、未使用","新品、未使用"]],prompt:"---"
-            .single-main__content__form__item.clearfix
-              %h4.item__sub 配送について
-              .single-main__content__form__item__select
-                .single-main__content__form__item__detail
-                  %label 配送料の負担
-                  %div
-                    .select-wrap
-                      %select.select__item{name:"burden_fee"}
-                        %option ---
-                .single-main__content__form__item__detail
-                  %label 発送元の地域
-                  %div
-                    .select-wrap
-                      %select.select__item{name:"prefecture"}
-                        %option ---
-                .single-main__content__form__item__detail
-                  %label 発送までの日数
-                  %div
-                    .select-wrap
-                      %select.select__item{name:"days_to_arrival"}
-                        %option ---
+            = f.fields_for :shipping_method do |fin|
+              .single-main__content__form__item.clearfix
+                %h4.item__sub 配送について
+                .single-main__content__form__item__select
+                  .single-main__content__form__item__detail
+                    = fin.label :"配送料の負担"
+                    %div
+                      .select-wrap
+                        = fin.select :burden_fee,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]],prompt:"---"
+                  .single-main__content__form__item__detail
+                    = fin.label :"発送元の地域"
+                    %div
+                      .select-wrap
+                        = fin.select :prefecuture,[["新品、未使用","新品、未使用"]],prompt:"---"
+                  .single-main__content__form__item__detail
+                    = fin.label :"発送までの日数"
+                    %div
+                      .select-wrap
+                        = fin.select :days_to_arrival,[["新品、未使用","新品、未使用"]],prompt:"---"
             .single-main__content__form__item.clearfix
               %h4.item__sub 販売価格(300〜9,999,999)
               .single-main__content__form__item__select
@@ -86,7 +84,7 @@
                     .sell-price__box--center--right -
                   %li.sell-price__box--bold
                     .sell-price__box--bold--left 販売利益
-                    .sell-price__box--bold--right ー
+                    .sell-price__box--bold--right
 
             .single-main__content__form__item
               %div
