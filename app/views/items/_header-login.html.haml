@@ -118,7 +118,8 @@
                 %figure
                   %div
                     = image_tag("/images/member_photo_noimage_thumb.png", height:"60",width:"60")
-                  %figcaption ユーザー名
+                  %figcaption
+                  = current_user.name
                 %ul.header-user__box__status
                   %li
                     %a 評価: 0
