@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_143732) do
+ActiveRecord::Schema.define(version: 2018_12_13_110105) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,20 +81,16 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "saler_id"
+    t.integer "buyer_id"
+    t.string "brand"
     t.bigint "lcategory_id"
     t.bigint "mcategory_id"
     t.bigint "scategory_id"
-    t.bigint "saler_id_id"
-    t.bigint "buyer_id_id"
-    t.bigint "user_id"
-    t.string "brand"
-    t.index ["buyer_id_id"], name: "index_Items_on_buyer_id_id"
     t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
     t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
     t.index ["name"], name: "index_items_on_name"
-    t.index ["saler_id_id"], name: "index_Items_on_saler_id_id"
     t.index ["scategory_id"], name: "index_Items_on_scategory_id"
-    t.index ["user_id"], name: "index_Items_on_user_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -131,7 +127,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
 
   create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "burden_fee", null: false
-    t.string "shipping_methods", null: false
     t.string "days_to_arrival", null: false
     t.string "prefecuture", null: false
     t.bigint "item_id", null: false
