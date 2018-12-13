@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
 
 
+  post 'items/payment' => 'items#payment'
+
   resources :items
+
   resources :users do
     collection do
       get 'new1'
