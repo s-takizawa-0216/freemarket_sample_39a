@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   post 'items/payment' => 'items#payment'
 
+
   resources :items
 
   resources :users do
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
       get 'new2'
     end
   end
+
   resources :users_details do
       get 'create'
     collection do
