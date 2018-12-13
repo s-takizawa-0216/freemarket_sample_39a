@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_150147) do
+ActiveRecord::Schema.define(version: 2018_12_11_113732) do
 
-  create_table "brands_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "bland_id", null: false
-    t.integer "large_category_id", null: false
-    t.integer "medium_category_id", null: false
-    t.integer "small_category_id", null: false
+  create_table "Items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "detail", null: false
+    t.string "condition", null: false
+    t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "lcategory_id"
+    t.bigint "mcategory_id"
+    t.bigint "scategory_id"
+    t.integer "saler_id"
+    t.integer "buyer_id"
+    t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
+    t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["scategory_id"], name: "index_Items_on_scategory_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -68,15 +78,12 @@ ActiveRecord::Schema.define(version: 2018_12_06_150147) do
     t.index ["saler_id"], name: "index_evaluations_on_saler_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "price", null: false
-    t.text "detail", null: false
-    t.string "condition", null: false
-    t.string "size", null: false
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_items_on_name"
+    t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,6 +106,8 @@ ActiveRecord::Schema.define(version: 2018_12_06_150147) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "lcategory_id"
+    t.index ["lcategory_id"], name: "index_mcategories_on_lcategory_id"
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
@@ -113,12 +122,13 @@ ActiveRecord::Schema.define(version: 2018_12_06_150147) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "mcategory_id"
+    t.index ["mcategory_id"], name: "index_scategories_on_mcategory_id"
     t.index ["name"], name: "index_scategories_on_name"
   end
 
   create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "burden_fee", null: false
-    t.string "shipping_methods", null: false
+    t.string "burden_fee", null: false
     t.string "days_to_arrival", null: false
     t.string "prefecuture", null: false
     t.bigint "item_id", null: false
@@ -138,12 +148,15 @@ ActiveRecord::Schema.define(version: 2018_12_06_150147) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
-    t.string "image"
+    t.string "image", default: "0"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

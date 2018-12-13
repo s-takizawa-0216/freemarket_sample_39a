@@ -105,45 +105,10 @@
               %li.left__list__brand__pulldown__name
                 %h3
                   %a{href: "https://www.mercari.com/jp/brand/"} ブランド一覧
-      %script
-        window.addEventListener('load', function(){
-
-        var menuBtn = $(".left__list__category"),
-        menuContent = $(".left__list__category__pulldown__name");
-        menuBtn.mouseover(function(){
-        menuContent.show();
-        });
-
-        menuBtn.mouseout(function(){
-        menuContent.hide();
-        });
-
-        menuContent.mouseover(function(){
-        $(this).find('ul').show();
-        });
-
-        menuContent.mouseout(function(){
-        $(this).find('ul').hide();
-        });
-
-        var menuBtn2 = $(".left__list__brand"),
-        menuContent2 = $(".left__list__brand__pulldown__name");
-        menuBtn2.mouseover(function(){
-        menuContent2.show();
-        });
-
-        menuBtn2.mouseout(function(){
-        menuContent2.hide();
-        });
-
-
-        }, false);
 
       .right__list
         %ul.right__list__li
           %li
-            %a.header-btn__red{href:"#"}
-              ログイン
+            = link_to 'ログイン' , new_user_path , class: "header-btn__red"
           %li
-            %a.header-btn__signup{href:"#"}
-              新規会員登録
+            = link_to '新規登録' , users_path , class: "header-btn__signup"

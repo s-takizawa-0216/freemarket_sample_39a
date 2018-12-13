@@ -1,0 +1,167 @@
+%header.header
+  .header-inner
+    .logo-bar
+      %h1.logo
+        %a{href: "https://www.mercari.com/jp/"}
+          = image_tag("/images/logo.svg",alt: "mercari", height: "36", width: "134")
+      %form.header-form{ action:"#"}
+        %input.form__input{ placeholder: "キーワードから探す", type: "search"}
+        = fa_icon ("search")
+    .header-nav__box.clearfix
+      %nav.left__list
+        %ul.left__list__ul
+          %li.left__list__category.claerfix
+            %h2
+              = link_to 'カテゴリーから探す' ,"https://www.mercari.com/jp/category/"
+            %ul.left__list__category__pulldown
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'レディース' ,"https://www.mercari.com/jp/category/1/"
+                  %ul.left__list__category__pulldown__name__child
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'トップス' ,"#"
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'ジャケット/アウター' , "#"
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'パンツ' ,'#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'スカート' ,'#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to '靴' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'ルームウェア/パジャマ' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'レッグウェア' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to '帽子' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'バッグ' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'アクセサリー' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to 'ヘアアクセサリー' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to '小物' , '#'
+                    %li.left__list__category__pulldown__name__child--li
+                      = link_to '時計' , '#'
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'メンズ',"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'ベビー・キッズ', "https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'インテリア・住まい', "https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to '本・音楽・ゲーム' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'おもちゃ・ホビー' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  =link_to 'コスメ・香水・美容' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to '家電・スマホ・カメラ' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  =link_to 'スポーツ・レジャー' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to'ハンドメイド' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'チケット' , "https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to '自転車・オートバイ' ,"https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'その他' , "https://www.mercari.com/jp/category/1/"
+              %li.left__list__category__pulldown__name
+                %h3
+                  = link_to 'カテゴリ', "https://www.mercari.com/jp/category/1/"
+          %li.left__list__brand
+            = link_to 'ブランドから探す' ,"https://www.mercari.com/jp/brand/"
+            %ul.left__list__brand__pulldown
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'シャネル' ,"https://www.mercari.com/jp/brand/658/"
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'ナイキ' , "https://www.mercari.com/jp/brand/857/"
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'ルイ ヴィトン' , "https://www.mercari.com/jp/brand/1326/"
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'シュプリーム' ,"https://www.mercari.com/jp/brand/1620/"
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'アディダス' , "https://www.mercari.com/jp/brand/99/"
+              %li.left__list__brand__pulldown__name
+                %h3
+                  = link_to 'ブランド一覧' , "https://www.mercari.com/jp/brand/"
+
+      %div.right__list
+        %ul.right__list__li
+          %li.mypage
+            %a.header-mypage{href:"#"}
+              %figure
+                %div
+                  = image_tag("/images/member_photo_noimage_thumb.png", height:"32",width:"32")
+              %div マイページ
+            %ul.header-mypage__box
+              .header-user__box
+                %figure
+                  %div
+                    = image_tag("/images/member_photo_noimage_thumb.png", height:"60",width:"60")
+                  %figcaption ユーザー名
+                %ul.header-user__box__status
+                  %li
+                    %a 評価: 0
+                  %li
+                    %a 出品: 0
+                %ul.header-user__box__points
+                  %li
+                    = link_to users_path, class:'clearfix' do
+                      .left 売上金
+                      .right ¥ 0
+                  %li
+                    = link_to users_path, class:'clearfix' do
+                      .left ポイント
+                      .right P 0
+              %ul.header-user__nav
+                %li.leftside__list2
+                  = link_to 'いいね！一覧' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 出品中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 取引中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '出品した商品 - 売却済み' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '購入した商品 - 取引中' , "", class: 'leftside__item'
+                  %i.arrow__right >
+                %li.leftside__list2
+                  = link_to '購入した商品 - 過去の取引' , "", class: 'leftside__item'
+                  %i.arrow__right >
+          %li.notice
+            = link_to 'お知らせ' , '#' ,class: 'header-notice'
+            = fa_icon ("bell")
+            %ul.header-notice__box
+              %li
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+                = render partial: 'mercaries/header-login-notice-inner'
+          %li
+            = fa_icon("check")
+            = link_to 'やる事リスト' , '#' , class: 'header-todo-list'
