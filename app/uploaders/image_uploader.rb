@@ -52,9 +52,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-=======
   def filename
     original_filename if original_filename
   end
->>>>>>> yuuki999/master
 end
