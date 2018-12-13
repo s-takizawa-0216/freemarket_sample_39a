@@ -87,10 +87,10 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.bigint "lcategory_id"
     t.bigint "mcategory_id"
     t.bigint "scategory_id"
-    t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
-    t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
+    t.index ["lcategory_id"], name: "index_items_on_lcategory_id"
+    t.index ["mcategory_id"], name: "index_items_on_mcategory_id"
     t.index ["name"], name: "index_items_on_name"
-    t.index ["scategory_id"], name: "index_Items_on_scategory_id"
+    t.index ["scategory_id"], name: "index_items_on_scategory_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
