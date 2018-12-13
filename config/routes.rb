@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
+  get 'users/new'
+  get 'users/user_profile'
+  get 'users/user_confilm'
+  get 'users/credit'
+  get 'users/:id' => 'users#show'
+
   resources :items
   resources :users do
     collection do
@@ -14,6 +20,7 @@ Rails.application.routes.draw do
       get 'new2'
     end
   end
+
   resources :users_details do
       get 'create'
     collection do

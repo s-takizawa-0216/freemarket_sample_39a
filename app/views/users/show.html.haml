@@ -1,43 +1,93 @@
-= render partial: "mercaries/header"
+%head
+  %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+
+
+%body
+= render partial: "items/header-login"
 
 .main-content
- %main.r-content-clearfix
-  .rightcontent
-   %section.rightcontent__section
-    %h2.rightcontent__head 本人情報の登録
-    %p.rightcontent__text お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
-    %form.rightcontent__main
-     .rightcontent__group
-      %label.jusyo 住所
-      %span.rightcontent__requied 必須
-     .rightcontent__addres
-      %addres
-       %p 郵便番号
-       %p 住所
-       %p 名前
-      = link_to "編集" ,"", class: "rightcontent__edit"
-     .rightcontent__sub
-      %label.jusyo__birthday 生年月日
-      %span.rightcontent__requied 必須
-      %br/
-      .birthday__select__wrap
-       = form_for root_path  do |f|
-        .select-default{:name => "year"}
-         = f.date_select :deadline_at, {order: [ :year, :month, :day ], use_month_numbers: true , start_year: 1900 , discard_day: true , discard_month: true},{class: "form-control"}
-         %i.arrow__under__left <
-         .year 年
-         %i.arrow__under__left__center <
-         = f.date_select :deadline_at, {order: [ :year, :month, :day ], use_month_numbers: true ,start_year: 1990 , discard_year: true ,date_separator: '月'},{class: "form-control"}
-         .year__day 日
-        %i.arrow__under__left__center__right <
+  %main.r-content-clearfix
+    .rightcontent1
+      %section.rightcontent__mypage
+        %figure.rightcontent__mypage2
+          =image_tag("/images/member_photo_noimage_thumb.png" ,class: "rightcontent__mypage--icon" , size: "60x60" , alt: "user")
+        %h2.rightcontent__mypage--name
+          = current_user.name
+        .rightcontent__mypagenumber
+          .rightcontent__mypage--evaluation  評価
+          .rightcontent__mypage--exhibit     出品数
+      %section.user-mypage
+        %ul.tab
+          %li.active お知らせ
+          %li やる事リスト
+        .area
+          %ul.show
+            %li.text
+              .user-mypage__link
+                %figure.figure-size
+                  = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                .user-mypage__body
+                  .user-mypage__text  sample-news1
+            %li.text
+              .user-mypage__link
+                %figure.figure-size
+                  = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                .user-mypage__body
+                  .user-mypage__text  sample-news2
+            %li.text
+              .user-mypage__link
+                %figure.figure-size
+                  = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                .user-mypage__body
+                  .user-mypage__text  sample-news3
+            %li.text
+              .user-mypage__link
+                %figure.figure-size
+                  = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                .user-mypage__body
+                  .user-mypage__text  sample-news4
+            %li.text
+              .user-mypage__link
+                %figure.figure-size
+                  = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                .user-mypage__body
+                  .user-mypage__text  sample-news5
+            %li.text
+              .user-mypage__link1  一覧を見る
 
-      %p.form  ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
-      %button.btn-default.btn-red{ type: "submit"} 登録する
-     .formgroup__text
-      %p.formgroup__text__text
-       = link_to "本人情報の登録について＞" , "" ,class: "rightcontent__edit"
+          %ul.id
+            = image_tag("/images/logo-gray.svg" ,size:"100x100" , alt: "mercari-log" , class: "mercari-log16")
+            %li.text1 現在やることはありません。
 
-  = render partial: "users/left-bar"
 
- = render partial: "mercaries/aside"
- = render partial: "mercaries/footer"
+      %section.rightcontent3
+        %section.rightcontent__container
+          %h2.rightcontent3__head 購入した商品
+        %section.user-mypage
+          %ul.tab-2
+            %li.active-2 取引中
+            %li 過去の取引
+          .area-2
+            %ul.show-2
+              %li.text-2
+                .user-mypage__link-2
+                  %figure.figure-size
+                    = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                  .user-mypage__body-2
+                    .user-mypage__text-2  sample-item1
+              %li.text-2
+                .user-mypage__link-2
+                  %figure.figure-size
+                    = image_tag("/images/mercari_icon.png" ,size:"48x48" , alt: "mercari-log")
+                  .user-mypage__body-2
+                    .user-mypage__text-2  sample-item2
+            %ul.id-2
+              = image_tag("/images/logo-gray.svg" ,size:"100x100" , alt: "mercari-log" , class: "mercari-log16")
+              %li.text1-2 過去の取引はありません。
+
+
+
+    = render partial: "users/left-bar"
+
+  = render partial: "mercaries/up-footer"
+  = render partial: "items/footer"
