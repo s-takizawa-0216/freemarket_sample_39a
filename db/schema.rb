@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_12_08_041211) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_041211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
@@ -77,19 +75,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_041211) do
     t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "lcategory_id"
-    t.bigint "mcategory_id"
-    t.bigint "scategory_id"
-    t.bigint "saler_id_id"
-    t.bigint "buyer_id_id"
-    t.bigint "user_id"
-    t.index ["buyer_id_id"], name: "index_Items_on_buyer_id_id"
-    t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
-    t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
     t.index ["name"], name: "index_items_on_name"
-    t.index ["saler_id_id"], name: "index_Items_on_saler_id_id"
-    t.index ["scategory_id"], name: "index_Items_on_scategory_id"
-    t.index ["user_id"], name: "index_Items_on_user_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,6 +101,13 @@ ActiveRecord::Schema.define(version: 2018_12_08_041211) do
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
+  create_table "medium_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_medium_categories_on_name"
+  end
+
   create_table "scategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -131,6 +124,13 @@ ActiveRecord::Schema.define(version: 2018_12_08_041211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_shipping_methods_on_item_id"
+  end
+
+  create_table "small_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_small_categories_on_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
