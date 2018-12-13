@@ -9,6 +9,8 @@
       %section.single-main__content
         %div
           %h2.single-main__content__head 商品の情報を入力
+          - flash.each do |type, msg|
+            %div{class: "alert alert-#{type}"}= msg
           = form_for @item do |f|
             .single-main__content__form__item
               %h3.single-main__content__form__item__title 出品画像
