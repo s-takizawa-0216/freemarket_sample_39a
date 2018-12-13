@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_12_11_143732) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -94,6 +92,9 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
     t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
     t.index ["name"], name: "index_items_on_name"
+    t.index ["saler_id_id"], name: "index_Items_on_saler_id_id"
+    t.index ["scategory_id"], name: "index_Items_on_scategory_id"
+    t.index ["user_id"], name: "index_Items_on_user_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -121,13 +122,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
-  create_table "medium_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_medium_categories_on_name"
-  end
-
   create_table "scategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -144,13 +138,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_shipping_methods_on_item_id"
-  end
-
-  create_table "small_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_small_categories_on_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
