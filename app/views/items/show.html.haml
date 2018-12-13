@@ -1,3 +1,4 @@
+
 %head
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
 %body
@@ -94,6 +95,8 @@
       .item__point
         .item__point__message 所持ポイントが表示されます
       %a.item__btn 購入画面に進む
+      = form_tag(action: :payment, method: :post) do
+        %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript" , "data-text" =>"購入画面に進む"}
       .item__description
         %p.item__description--inner
         ここに商品の詳細が入ります。
