@@ -64,12 +64,12 @@
                     = fin.label :"発送元の地域"
                     %div
                       .select-wrap
-                        = fin.select :prefecuture,[["新品、未使用","新品、未使用"]],prompt:"---"
+                        = fin.select :prefecuture,[["北海道","北海道"]],prompt:"---"
                   .single-main__content__form__item__detail
                     = fin.label :"発送までの日数"
                     %div
                       .select-wrap
-                        = fin.select :days_to_arrival,[["新品、未使用","新品、未使用"]],prompt:"---"
+                        = fin.select :days_to_arrival,[["1~2日で発送","1~2日で発送"],["3~4日で発送","3~4日で発送"],["5~6日で発送","5~6日で発送"]],prompt:"---"
             .single-main__content__form__item.clearfix
               %h4.item__sub 販売価格(300〜9,999,999)
               .single-main__content__form__item__select
