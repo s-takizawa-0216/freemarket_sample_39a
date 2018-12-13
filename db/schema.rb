@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_113732) do
+ActiveRecord::Schema.define(version: 2018_12_11_143732) do
 
   create_table "Items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -25,15 +25,12 @@ ActiveRecord::Schema.define(version: 2018_12_11_113732) do
     t.bigint "scategory_id"
     t.integer "saler_id"
     t.integer "buyer_id"
+    t.string "brand"
     t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
     t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["scategory_id"], name: "index_Items_on_scategory_id"
   end
-
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
-ActiveRecord::Schema.define(version: 2018_12_11_143732) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +51,21 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "brands_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "bland_id", null: false
+    t.integer "large_category_id", null: false
+    t.integer "medium_category_id", null: false
+    t.integer "small_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -117,6 +129,8 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "lcategory_id"
+    t.bigint "lcategories_id"
+    t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
     t.index ["lcategory_id"], name: "index_mcategories_on_lcategory_id"
     t.index ["name"], name: "index_mcategories_on_name"
   end
@@ -164,6 +178,9 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
