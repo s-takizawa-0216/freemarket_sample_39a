@@ -1,17 +1,34 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.aaa
+  .logo333
+    = image_tag("/images/logo.svg", class: "logo333__item")
+  .box4444
+    .box4444__top
+      %p.box4444__sas アカウントをお持ちでない方はこちら
+      %p.box4444__signup
+        = link_to '新規会員登録' , new_user_registration_path
+    .box4444__bottom
+      .box4444__er
+        .box4444__item
+          = fa_icon ("facebook-square") ,class: "box444__awe"
+          = link_to 'facebookでログイン' ,user_facebook_omniauth_authorize_path
+      .box4444__wr
+        .box4444__item
+          = fa_icon ("google"), class: "box444__awe"
+          = link_to 'Googleでログイン' , user_google_oauth2_omniauth_authorize_path
+      .form-yes
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.email_field :email,autofocus: true, autocomplete:"email" ,placeholder: "メールアドレス", class: "form-yes__n"
+          .margin-god-c
+          = f.password_field :password, autocomplete: "current-password" , placeholder: "パスワード",class: "form-yes__n"
+          .robot
+            .g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
+          = f.submit class: "form-yes__b", value: "ログイン"
+      %p.blue1 パスワードをお忘れの方
+  .bottom-list7
+    %ul.bottom-list7__ul
+      %li.bottom-list7__item プライバシーポリシー
+      %li.bottom-list7__item メルカリ利用規約
+      %li.bottom-list7__item 特定商取引に関する表記
+    = image_tag("/images/logo-gray", class: "bottom-list7__image clearfix")
+    %p.bottom-list7__footer © 2018 Mercari
+

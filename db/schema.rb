@@ -10,33 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_143732) do
 
-  create_table "Items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "price", null: false
-    t.text "detail", null: false
-    t.string "condition", null: false
-    t.string "size", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "lcategory_id"
-    t.bigint "mcategory_id"
-    t.bigint "scategory_id"
-    t.bigint "saler_id_id"
-    t.bigint "buyer_id_id"
-    t.bigint "user_id"
-    t.integer "saler_id"
-    t.integer "buyer_id"
-    t.string "brand"
-    t.index ["buyer_id_id"], name: "index_Items_on_buyer_id_id"
-    t.index ["lcategory_id"], name: "index_Items_on_lcategory_id"
-    t.index ["mcategory_id"], name: "index_Items_on_mcategory_id"
-    t.index ["name"], name: "index_items_on_name"
-    t.index ["saler_id_id"], name: "index_Items_on_saler_id_id"
-    t.index ["scategory_id"], name: "index_Items_on_scategory_id"
-    t.index ["user_id"], name: "index_Items_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2018_12_13_110105) do
+>>>>>>> yuuki999/master
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -97,6 +73,27 @@ ActiveRecord::Schema.define(version: 2018_12_11_143732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "detail", null: false
+    t.string "condition", null: false
+    t.string "size", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "saler_id"
+    t.integer "buyer_id"
+    t.string "brand"
+    t.bigint "lcategory_id"
+    t.bigint "mcategory_id"
+    t.bigint "scategory_id"
+    t.index ["lcategory_id"], name: "index_items_on_lcategory_id"
+    t.index ["mcategory_id"], name: "index_items_on_mcategory_id"
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["scategory_id"], name: "index_items_on_scategory_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
