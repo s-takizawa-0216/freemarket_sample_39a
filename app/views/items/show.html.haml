@@ -13,7 +13,7 @@
       .item__content.clearfix
         .item__content__image
           .item__content__image__top
-            = image_tag("/images/IMG_2942.jpg",height:"300",width:"300",alt:"")
+            = image_tag("#{@item.images.first.image}",height:"300",width:"300",alt:"")
           .item__content__image__list.clearfix
             .item__content__image__list__inner
               = image_tag("/images/IMG_2942.jpg",height:"75",width:"75",alt:"image01")
