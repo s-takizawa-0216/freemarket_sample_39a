@@ -12,16 +12,16 @@
       .item__content.clearfix
         .item__content__image
           .item__content__image__top
-            = image_tag("/images/IMG_2942.jpg",height:"300",width:"300",alt:"")
+            = image_tag("#{@item.images.first.image}",height:"300",width:"300",alt:"")
           .item__content__image__list.clearfix
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2942.jpg",height:"75",width:"75",alt:"image01")
+              = image_tag("#{@item.images.first.image}",height:"75",width:"75",alt:"image01")
             .item__content__image__list__inner
-              = image_tag("/images/main_content_pc.png",height:"75",width:"75",alt:"image02")
+              = image_tag("#{@item.images.second.image}",height:"75",width:"75",alt:"image02")
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2906.jpg",height:"75",width:"75",alt:"image03")
+              = image_tag("#{@item.images.third.image}",height:"75",width:"75",alt:"image03")
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2946.jpg",height:"75",width:"75",alt:"image04")
+              = image_tag("#{@item.images.fourth.image}",height:"75",width:"75",alt:"image04")
         %table.item__content__table
           %tbody
             %tr
