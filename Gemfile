@@ -81,7 +81,9 @@ gem 'kaminari'
 gem 'ransack'
 gem "font-awesome-rails"
 gem "mechanize"
+gem 'carrierwave'
+gem 'fog-aws'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-
+gem 'carrierwave'
