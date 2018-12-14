@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_12_13_110105) do
->>>>>>> yuuki999/master
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -75,7 +73,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
@@ -116,10 +113,8 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "lcategory_id"
     t.bigint "lcategories_id"
     t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
-    t.index ["lcategory_id"], name: "index_mcategories_on_lcategory_id"
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
@@ -127,8 +122,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "mcategory_id"
-    t.index ["mcategory_id"], name: "index_scategories_on_mcategory_id"
     t.index ["name"], name: "index_scategories_on_name"
   end
 
