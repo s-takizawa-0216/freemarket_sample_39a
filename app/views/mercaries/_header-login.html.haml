@@ -160,7 +160,7 @@
       %div.right__list
         %ul.right__list__li
           %li.mypage
-            %a.header-mypage{href:"#"}
+            %a.header-mypage
               %figure
                 %div
                   = image_tag("/images/member_photo_noimage_thumb.png", height:"32",width:"32")
@@ -205,7 +205,7 @@
                   = link_to '購入した商品 - 過去の取引' , "", class: 'leftside__item'
                   %i.arrow__right >
           %li.notice
-            %a.header-notice{href:"#"}
+            %a.header-notice
               %i.far.fa-bell
               %span お知らせ
             %ul.header-notice__box
@@ -216,6 +216,6 @@
                 = render partial: 'mercaries/header-login-notice-inner'
                 = render partial: 'mercaries/header-login-notice-inner'
           %li
-            %a.header-todo-list{href:"#"}
+            %a.header-todo-list
               %i.fas.fa-check
               %span やることリスト
