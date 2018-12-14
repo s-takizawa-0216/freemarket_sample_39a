@@ -61,6 +61,11 @@
                     .select-wrap
                       = fin.select :burden_fee,[["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]],prompt:"---"
                 .single-main__content__form__item__detail
+                  / = fin.label :"配送の方法"
+                  / %div
+                  /   .select-wrap
+                  /     = fin.select :shipping_methods,[["未定","未定"],["クロネコヤマト","クロネコヤマト"]],prompt:"---"
+                .single-main__content__form__item__detail
                   = fin.label :"発送元の地域"
                   %div
                     .select-wrap
