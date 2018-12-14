@@ -2,10 +2,14 @@
 @import "./modules/mixin/clearfix.scss";
 @import "./modules/items/btn-red.scss";
 
+label{
+  display: inline-block;
+}
 
 .single-container{
   @include background;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
   .single-header{
 
     height:128px;
@@ -54,6 +58,10 @@
               padding: 40px;
               border-top: 1px solid #eee;
               @include clearfix;
+
+              &__title{
+                display: inline;
+              }
 
 
               &__image{
@@ -241,6 +249,7 @@
 
                 .select-wrap{
                   margin: 8px 0 0;
+                  position:relative;
 
                   >select{
                     width:100%;
@@ -250,6 +259,16 @@
                     border: 1px solid #ccc;
                     cursor: pointer;
                     background-color: white;
+                  }
+
+                  .fa.fa-angle-down{
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    z-index: 2;
+                    color: #888;
+                    font-size: 22px;
+                    transform: translate(0, -50%);
                   }
 
                 }
