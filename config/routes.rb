@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-
   root 'items#index'
 
   get 'users/new'
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
       get 'new2'
     end
   end
-
   resources :users_details do
       get 'create'
     collection do
