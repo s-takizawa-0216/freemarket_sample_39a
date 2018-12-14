@@ -13,16 +13,22 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item  = Item.find(params[:id])
   end
 
 
   def payment
+    @item = find(params[:id]).price
     Payjp.api_key = 'sk_test_400205e7ce6cabc8a6ab9232'
     charge = Payjp::Charge.create(
-    :amount => 3500,
+    :amount => @item.price,
     :card => params['payjp-token'],
     :currency => 'jpy',
     )
+  end
+
+  def update
+  end
 
   def new
     @item = Item.new
@@ -43,7 +49,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :detail, :condition, :size, :lcategory_id, :mcategory_id,:scategory_id, shipping_method_attributes: [:id, :burden_fee, :days_to_arrival, :prefecuture], images_attributes: [:id, :image])
+    params.require(:item).permit(:name, :price, :detail, :condition, :size, :lcategory_id, :mcategory_id,:scategory_id, shipping_method_attributes: [:id, :burden_fee, :days_to_arrival, :prefecuture], images_attributes: [:id, :image])merge(current_user.id)
 
   end
 
