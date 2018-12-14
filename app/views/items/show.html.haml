@@ -8,26 +8,26 @@
       %ul
         %li パンくず
     %section.item
-      %h1.item__name 商品名
+      %h1.item__name #{@item.name}
       .item__content.clearfix
         .item__content__image
           .item__content__image__top
-            = image_tag("/images/IMG_2942.jpg",height:"300",width:"300",alt:"")
+            = image_tag("#{@item.images.first.image}",height:"300",width:"300",alt:"")
           .item__content__image__list.clearfix
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2942.jpg",height:"75",width:"75",alt:"image01")
+              = image_tag("#{@item.images.first.image}",height:"75",width:"75",alt:"image01")
             .item__content__image__list__inner
-              = image_tag("/images/main_content_pc.png",height:"75",width:"75",alt:"image02")
+              = image_tag("#{@item.images.second.image}",height:"75",width:"75",alt:"image02")
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2906.jpg",height:"75",width:"75",alt:"image03")
+              = image_tag("#{@item.images.third.image}",height:"75",width:"75",alt:"image03")
             .item__content__image__list__inner
-              = image_tag("/images/IMG_2946.jpg",height:"75",width:"75",alt:"image04")
+              = image_tag("#{@item.images.fourth.image}",height:"75",width:"75",alt:"image04")
         %table.item__content__table
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to 'ユーザー名',"user_page"
+                = link_to '@item.saler.name',"user_page"
                 %div
                   .item-user__rating
                     %i.fa.fa-laugh
@@ -44,29 +44,29 @@
                 = link_to "category_page" do
                   .large-category
                     %i.fa.fa-angle-right
-                    大カテゴリ
+                    = @item.lcategory.name
                 = link_to "category_page" do
                   .medium-category
                     %i.fa.fa-angle-right
-                    中カテゴリ
+                    = @item.mcategory.name
                 = link_to "category_page" do
                   .small-category
                     %i.fa.fa-angle-right
-                    小カテゴリ
+                    = @item.scategory.name
             %tr
               %th ブランド
               %td
                 = link_to "brand_page" do
-                  %div ブランド名
+                  %div #{@item.brand}
             %tr
               %th 商品のサイズ
-              %td プルダウンで選択
+              %td #{@item.size}
             %tr
               %th 商品の状態
-              %td プルダウンで選択
+              %td #{@item.condition}
             %tr
               %th 配送料の負担
-              %td プルダウンで選択
+              %td #{@item.shipping_method.burden_fee}
             %tr
               %th 配送の方法
               %td プルダウンで選択
@@ -74,10 +74,10 @@
               %th 配送元地域
               %td
                 = link_to "prefecture_page" do
-                  %div 都道府県
+                  %div #{@item.shipping_method.prefecuture}
             %tr
               %th 発送の目安
-              %td プルダウンで選択
+              %td #{@item.shipping_method.days_to_arrival}
       %script
         window.addEventListener('load', function() {
         $('.item__content__image__list__inner img').mouseover(function(){
@@ -88,7 +88,7 @@
         }, false);
 
       .item__price
-        %span.item__price--bold ¥ 商品の値段
+        %span.item__price--bold ¥ #{@item.price}
         %span.item__price__tax (税込)
         %span.item__price__shipping-fee 送料込み
       .item__point
@@ -96,9 +96,7 @@
       %a.item__btn 購入画面に進む
       .item__description
         %p.item__description--inner
-        ここに商品の詳細が入ります。
-        %br
-        開業
+        #{@item.detail}
       .item__likes.clearfix
         .item__likes__left
           %button.item__button__likes
