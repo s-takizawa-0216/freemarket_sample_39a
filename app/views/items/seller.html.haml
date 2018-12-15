@@ -1,0 +1,117 @@
+%head
+  %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+%body
+  .default-content
+    %header
+      = render partial: 'items/header'
+    %nav.bread-crumbs
+      %ul
+        %li パンくず
+    .item-content-right
+      %section.item
+        %h1.item__name 商品名
+        .item__content.clearfix
+          .item__content__image
+            .item__content__image__top
+              = image_tag("/images/IMG_2942.jpg",height:"300",width:"300",alt:"")
+            .item__content__image__list.clearfix
+              .item__content__image__list__inner
+                = image_tag("/images/IMG_2942.jpg",height:"75",width:"75",alt:"image01")
+              .item__content__image__list__inner
+                = image_tag("/images/main_content_pc.png",height:"75",width:"75",alt:"image02")
+              .item__content__image__list__inner
+                = image_tag("/images/IMG_2906.jpg",height:"75",width:"75",alt:"image03")
+              .item__content__image__list__inner
+                = image_tag("/images/IMG_2946.jpg",height:"75",width:"75",alt:"image04")
+          %table.item__content__table
+            %tbody
+              %tr
+                %th 出品者
+                %td
+                  = link_to 'ユーザー名',"user_page"
+                  %div
+                    .item-user__rating
+                      %i.fa.fa-laugh
+                      %span 12
+                    .item-user__rating
+                      %i.fa.fa-meh
+                      %span 0
+                    .item-user__rating
+                      %i.fa.fa-frown
+                      %span 3
+              %tr
+                %th カテゴリー
+                %td
+                  = link_to "category_page" do
+                    .large-category
+                      %i.fa.fa-angle-right
+                      大カテゴリ
+                  = link_to "category_page" do
+                    .medium-category
+                      %i.fa.fa-angle-right
+                      中カテゴリ
+                  = link_to "category_page" do
+                    .small-category
+                      %i.fa.fa-angle-right
+                      小カテゴリ
+              %tr
+                %th ブランド
+                %td
+                  = link_to "brand_page" do
+                    %div ブランド名
+              %tr
+                %th 商品のサイズ
+                %td プルダウンで選択
+              %tr
+                %th 商品の状態
+                %td プルダウンで選択
+              %tr
+                %th 配送料の負担
+                %td プルダウンで選択
+              %tr
+                %th 配送の方法
+                %td プルダウンで選択
+              %tr
+                %th 配送元地域
+                %td
+                  = link_to "prefecture_page" do
+                    %div 都道府県
+              %tr
+                %th 発送の目安
+                %td プルダウンで選択
+        %script
+          window.addEventListener('load', function() {
+          $('.item__content__image__list__inner img').mouseover(function(){
+          var $thisImg = $(this).attr('src');
+          var $thisAlt = $(this).attr('alt');
+          $('.item__content__image__top img').attr({src:$thisImg,alt:$thisAlt});
+          });
+          }, false);
+
+        .item__price
+          %span.item__price--bold ¥ 商品の値段
+          %span.item__price__tax (税込)
+          %span.item__price__shipping-fee 送料込み
+        .item-describe
+          %p.item-describe__test testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+      .item-edit
+        .item-edit__height
+        .item-edit__btn--red
+          = link_to "/items/#{@item.id}/edit", method: :get do
+            %p.item-edit__text 商品の編集
+        .item-edit__or
+          or
+        .item-edit__btn--gray
+          %p.item-edit__text 出品を一旦停止する
+        .item-edit__btn--gray
+          %p.item-edit__text この商品を削除する
+      .item-messages
+        .item-messages__content
+          .item-messages__content--inner
+            = form_for root_path do |f|
+              .item-messages__content--inner__form
+                %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+                = f.text_area :content,class:'content-detail',rows:"4"
+                = f.submit :'コメントする',class:'sell__btn__gray'
+      .item-footer__height
+    = render partial: 'items/footer'
