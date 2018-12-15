@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   get 'users/credit'
   get 'users/:id' => 'users#show'
 
-  resources :items
+  resources :items do
+    collection do
+      get ':id/seller' => 'items#seller'
+    end
+  end
   resources :users do
     collection do
       get 'new1'
