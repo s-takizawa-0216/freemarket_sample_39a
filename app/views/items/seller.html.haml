@@ -104,7 +104,8 @@
         .item-edit__btn--gray
           %p.item-edit__text 出品を一旦停止する
         .item-edit__btn--gray
-          %p.item-edit__text この商品を削除する
+          = link_to "/items/#{@item.id}", method: :delete do
+            %p.item-edit__text この商品を削除する
       .item-messages
         .item-messages__content
           .item-messages__content--inner
