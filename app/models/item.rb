@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :lcategory
   belongs_to :mcategory
   belongs_to :scategory
+  belongs_to :saler, class_name: "User"
   #buyerなどのアソシエーションは一旦削除してます
   has_one :shipping_method
   accepts_nested_attributes_for :shipping_method
