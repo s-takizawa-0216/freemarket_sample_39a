@@ -97,7 +97,8 @@
       .item-edit
         .item-edit__height
         .item-edit__btn--red
-          %p.item-edit__text 商品の編集
+          = link_to "/items/#{@item.id}/edit", method: :get do
+            %p.item-edit__text 商品の編集
         .item-edit__or
           or
         .item-edit__btn--gray
