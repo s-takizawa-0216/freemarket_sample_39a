@@ -118,7 +118,8 @@
                 %figure
                   %div
                     = image_tag("/images/member_photo_noimage_thumb.png", height:"60",width:"60")
-                  %figcaption ユーザー名
+                  %figcaption
+                  = current_user.name
                 %ul.header-user__box__status
                   %li
                     %a 評価: 0
@@ -153,8 +154,8 @@
                   = link_to '購入した商品 - 過去の取引' , "", class: 'leftside__item'
                   %i.arrow__right >
           %li.notice
-            = link_to 'お知らせ' , '#' ,class: 'header-notice'
             = fa_icon ("bell")
+            = link_to 'お知らせ' , '#' ,class: 'header-notice'
             %ul.header-notice__box
               %li
                 = render partial: 'mercaries/header-login-notice-inner'
