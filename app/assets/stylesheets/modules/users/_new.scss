@@ -141,6 +141,12 @@
 .robot{
   width: 100%;
 }
+.robot-2{
+  &__button{
+    width: 470px !important;
+    margin: 0 auto !important;
+  }
+}
 .g-recaptcha{
   margin: 30px 95px;
 }
