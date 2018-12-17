@@ -14,12 +14,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+
   end
 
   def new
     if user_signed_in?
       @item = Item.new
-      4.times {@item.images.build}
+      @item.images.build
       @item.build_shipping_method
     else
       redirect_to users_new_path
@@ -39,7 +40,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :detail, :condition, :size, :lcategory_id, :mcategory_id,:scategory_id, shipping_method_attributes: [:id, :burden_fee, :days_to_arrival, :prefecuture], images_attributes: [:id, :image]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :price, :detail, :condition, :size, :brand, :lcategory_id, :mcategory_id,:scategory_id, shipping_method_attributes: [:id, :burden_fee, :shipping_methods, :days_to_arrival, :prefecuture], images_attributes: [:id, :image]).merge(saler_id: current_user.id)
   end
 
 end
