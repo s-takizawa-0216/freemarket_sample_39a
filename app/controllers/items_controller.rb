@@ -17,18 +17,18 @@ class ItemsController < ApplicationController
   end
 
 
-  def payment
-    @item = find(params[:id]).price
+  def purchased
+    @item = Item.find(params[:id])
     Payjp.api_key = 'sk_test_400205e7ce6cabc8a6ab9232'
     charge = Payjp::Charge.create(
     :amount => @item.price,
     :card => params['payjp-token'],
     :currency => 'jpy',
     )
+    @item.update(buyer_id: current_user.id)
+    redirect_to i_purchased_path
   end
 
-  def update
-  end
 
   def new
     if user_signed_in?
