@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'new2'
       get 'new3'
       get 'new4'
-      get 'create'
+      get 'create_finish'
     end
   end
 
