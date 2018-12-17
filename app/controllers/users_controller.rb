@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def new4
   end
 
-  def create
+  def create_finish
   end
 
   def show
