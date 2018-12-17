@@ -30,6 +30,5 @@
 
 config/secrets.yml
 
-/config/initializers/setting.rb
 
 public/uploads/*
