@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_12_11_143732) do
-=======
+
 ActiveRecord::Schema.define(version: 2018_12_13_110105) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
->>>>>>> yuuki999/master
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -138,15 +135,8 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.bigint "lcategory_id"
     t.bigint "lcategories_id"
     t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
-    t.index ["lcategory_id"], name: "index_mcategories_on_lcategory_id"
-=======
-    t.bigint "lcategories_id"
-    t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
->>>>>>> yuuki999/master
     t.index ["name"], name: "index_mcategories_on_name"
   end
 
