@@ -37,6 +37,29 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.saler_id == current_user.id
+      item.update!(item_params)
+    end
+  end
+
+  def seller
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.saler.id == current_user.id
+      item.destroy
+      redirect_to user_path(item.saler.id)
+    end
+  end
+
   private
 
   def item_params

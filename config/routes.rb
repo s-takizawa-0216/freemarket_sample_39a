@@ -4,35 +4,29 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-
   root 'items#index'
 
   get 'users/new'
   get 'users/user_profile'
   get 'users/user_confilm'
   get 'users/credit'
-  get 'users/:id' => 'users#show'
 
-  resources :items
   resources :users do
     collection do
       get 'new1'
       get 'new2'
+      get 'new3'
+      get 'new4'
+      get 'create_finish'
     end
   end
 
-  resources :users_details do
-      get 'create'
+  get 'users/:id' => 'users#show'
+
+  resources :items do
     collection do
-      get 'new3'
+      get ':id/seller' => 'items#seller'
     end
   end
-  resources :users_details do
-    resources :credit_cards
-  end
-  resources :credit_cards do
-    collection do
-      get 'new4'
-    end
-  end
+
 end

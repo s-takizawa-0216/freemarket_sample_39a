@@ -6,13 +6,10 @@
 
   = link_to "ログアウト", destroy_user_session_path, method: :delete
 
-
-
 - if user_signed_in?
-  = render partial: 'items/header-login'
-
+  = render partial: 'shared/header-login'
 - else
-  = render partial: 'items/header'
+  = render partial: 'shared/header'
 
 %main.main
   %section.banner
@@ -48,15 +45,15 @@
   %section.contents
     %h2.pickup-header ピックアップカテゴリー
     .pickup-items
-      = render partial: 'pickup-category'
+      = render partial: 'shared/pickup-category'
   %section.contents
     %h2.pickup-header ピックアップブランド
     .pickup-items
-      = render partial: 'pickup-brand'
+      = render partial: 'shared/pickup-brand'
 
   = link_to "/items/new", class:"btn-exhibit" do
     .sell 出品
     = fa_icon ("camera")
 
-=  render partial: 'mercaries/up-footer.html.haml'
-=  render partial: 'items/footer.html.haml'
+=  render partial: 'shared/up-footer.html.haml'
+=  render partial: 'shared/footer.html.haml'
