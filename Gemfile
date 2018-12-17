@@ -88,4 +88,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'payjp'
 gem 'carrierwave'
-
+gem 'recaptcha', require: "recaptcha/rails"
