@@ -43,8 +43,9 @@ class User < ApplicationRecord
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 # バリデーションの定義
-  validates :name, presence: true , uniqueness: true   #空でない事、nameが重複しない事
+  validates :name, presence: true , uniqueness: true, length: { maximum: 19 }   #空でない事、nameが重複しない事
   validates :encrypted_password, length: { minimum: 6 }  #パスワードが6文字以上である事
+  validates :encrypted_password, length: { maximum: 128 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
 end
