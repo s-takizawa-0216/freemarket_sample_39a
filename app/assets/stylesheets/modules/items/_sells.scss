@@ -2,9 +2,6 @@
 @import "./modules/mixin/clearfix.scss";
 @import "./modules/items/btn-red.scss";
 
-label{
-  display: inline-block;
-}
 
 .single-container{
   @include background;
@@ -97,6 +94,7 @@ label{
                   right: 16px;
                 }
               }
+
               h4{
                 color:#a4a4a4;
                 font-weight: bold;
@@ -114,16 +112,24 @@ label{
               }
 
               &__detail{
+                margin:40px 0 0 ;
+
+
+                &--second{
+                  font-weight: bold;
+                  display: none;
+                  margin: 40px 0 0;
+                  font-size: 14px;
+                }
 
                 &:first-child{
                   margin: 0;
                 }
-                margin:40px 0 0 ;
 
                 label{
                   font-weight: 600;
                   font-size: 14px;
-                  display: block;
+                  display: inline-block;
                 }
 
                 .input-name{
@@ -158,7 +164,6 @@ label{
                   @include clearfix;
 
                   .box__left{
-                    width:50%;
                     line-height: 48px;
                     display: inline-block;
                     font-weight:600;
@@ -176,7 +181,7 @@ label{
                       margin: 0 0 0 8px;
                       width:80%;
 
-                        .input-name{
+                        .input-price{
                           width: 100%;
                           height:48px;
                           border-radius: 4px;
