@@ -45,7 +45,8 @@
             = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "form-yes__n"
             .margin-god-c
           .robot-2
-            .robot-2__robotro.g-recaptcha{"data-sitekey" => "6Lfl4X4UAAAAAMs9N7hKxwx4dQjE5-Oy--TmomoU"}
+            .robot-2__button
+              = recaptcha_tags
           .margin-god-c
           = f.submit class: "form-yes__b", value: "次へ進む"
   .bottom-list7
