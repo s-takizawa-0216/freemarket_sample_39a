@@ -3,7 +3,7 @@
 %body
   .default-content
     %header
-      = render partial: 'items/header'
+      = render partial: 'items/header-login'
     %nav.bread-crumbs
       %ul
         %li パンくず
@@ -14,20 +14,16 @@
           .item__content__image__top
             = image_tag("#{@item.images.first.image}",height:"300",width:"300",alt:"")
           .item__content__image__list.clearfix
-            .item__content__image__list__inner
-              = image_tag("#{@item.images.first.image}",height:"75",width:"75",alt:"image01")
-            .item__content__image__list__inner
-              = image_tag("#{@item.images.second.image}",height:"75",width:"75",alt:"image02")
-            .item__content__image__list__inner
-              = image_tag("#{@item.images.third.image}",height:"75",width:"75",alt:"image03")
-            .item__content__image__list__inner
-              = image_tag("#{@item.images.fourth.image}",height:"75",width:"75",alt:"image04")
+            - @item.images.each do |image|
+              .item__content__image__list__inner
+                = image_tag("#{@images}",height:"75",width:"75",src:"")
         %table.item__content__table
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to '@item.saler.name',"user_page"
+                = link_to "user_path(current_user)" do
+                  = @item.saler.name
                 %div
                   .item-user__rating
                     %i.fa.fa-laugh
@@ -69,7 +65,7 @@
               %td #{@item.shipping_method.burden_fee}
             %tr
               %th 配送の方法
-              %td プルダウンで選択
+              %td #{@item.shipping_method.shipping_methods}
             %tr
               %th 配送元地域
               %td
@@ -158,22 +154,13 @@
     .other-items
       %section.other-items__user
         %h2.other-items__head
-          = link_to 'ユーザーさんのその他の出品',"user-item-page"
+          = link_to "#{@item.saler.name}さんのその他の出品","user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
           = render partial: 'items/item-content'
       %section.other-items__brand
         %h2.other-items__head
           = link_to 'ブランド名のその他の出品',"user-item-page"
         .other-items__contents.clearfix
           = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
+
     = render partial: 'items/footer'
