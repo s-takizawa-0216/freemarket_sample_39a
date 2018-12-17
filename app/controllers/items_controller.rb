@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     :currency => 'jpy',
     )
     @item.update(buyer_id: current_user.id)
-    redirect_to i_purchased_path
+    redirect_to items_purchased_path
   end
 
 

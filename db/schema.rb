@@ -10,10 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 ActiveRecord::Schema.define(version: 2018_12_13_110105) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,11 +92,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_110105) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
-    t.bigint "lcategories_id"
-    t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
->>>>>>> origin/master
     t.bigint "lcategories_id"
     t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
     t.index ["name"], name: "index_mcategories_on_name"

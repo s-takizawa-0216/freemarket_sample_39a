@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   post 'items/purchased/:id' => 'items#purchased',as:'i_purchased_path'
-  get  'i/purchased'
+  get  'items/purchased'
   get  'items/sell_item'
 
   resources :items
