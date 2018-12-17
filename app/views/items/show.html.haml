@@ -3,7 +3,7 @@
 %body
   .default-content
     %header
-      = render partial: 'items/header'
+      = render partial: 'shared/header'
     %nav.bread-crumbs
       %ul
         %li パンくず
@@ -160,20 +160,20 @@
         %h2.other-items__head
           = link_to 'ユーザーさんのその他の出品',"user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
       %section.other-items__brand
         %h2.other-items__head
           = link_to 'ブランド名のその他の出品',"user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-          = render partial: 'items/item-content'
-    = render partial: 'items/footer'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content'
+    = render partial: 'shared/footer'
