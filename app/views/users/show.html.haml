@@ -4,7 +4,8 @@
 
 %body
 = render partial: "items/header-login"
-
+- breadcrumb :mypage
+= breadcrumbs separator: " &rsaquo; "
 .main-content
   %main.r-content-clearfix
     .rightcontent1
