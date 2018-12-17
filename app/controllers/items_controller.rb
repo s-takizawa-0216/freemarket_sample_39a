@@ -13,8 +13,22 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item  = Item.find(params[:id])
   end
+
+
+  def purchased
+    @item = Item.find(params[:id])
+    Payjp.api_key = PAYJP_SECRET_KEY
+    charge = Payjp::Charge.create(
+    :amount => @item.price,
+    :card => params['payjp-token'],
+    :currency => 'jpy',
+    )
+    @item.update(buyer_id: current_user.id)
+    redirect_to i_purchased_path
+  end
+
 
   def new
     if user_signed_in?

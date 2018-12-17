@@ -29,3 +29,6 @@
 /config/secrets.yml
 
 config/secrets.yml
+
+
+public/uploads/*

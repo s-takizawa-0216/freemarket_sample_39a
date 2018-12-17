@@ -13,7 +13,14 @@ Rails.application.routes.draw do
   get 'users/credit'
   get 'users/:id' => 'users#show'
 
+
+  post 'items/purchased/:id' => 'items#purchased',as:'i_purchased_path'
+  get  'i/purchased'
+  get  'items/sell_item'
+
   resources :items
+  get 'items/:id' => 'items#show'
+
   resources :users do
     collection do
       get 'new1'
