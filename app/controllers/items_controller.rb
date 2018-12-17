@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
 
   def purchased
     @item = Item.find(params[:id])
-    Payjp.api_key = 'sk_test_400205e7ce6cabc8a6ab9232'
+    Payjp.api_key = PAYJP_SECRET_KEY
     charge = Payjp::Charge.create(
     :amount => @item.price,
     :card => params['payjp-token'],
