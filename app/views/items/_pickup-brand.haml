@@ -4,13 +4,13 @@
   - @chanel.each do |item|
     %section.item-box__content
       %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+        = image_tag "#{@item.images.first.image}"
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
         .item-box__content__detail__inner
           %h3#textBox-price.item-box__content__detail__inner__price
-            = "¥ #{item.price}"
+            = "¥ #{@item.price}"
           %p.item-box__content__detail__inner__tax
             (税込)
 .item-box__viewall
