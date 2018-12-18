@@ -18,19 +18,11 @@
               .single-main__content__form__item__image
                 = fini.label :image, class:"upload-box" do
                   画像はこちら
-                  = fini.file_field :image, class: 'hidden'
-              .single-main__content__form__item__image
-                = fini.label :image, class:"upload-box" do
-                  画像はこちら
-                  = fini.file_field :image, class: 'hidden'
-              .single-main__content__form__item__image
-                = fini.label :image, class:"upload-box" do
-                  画像はこちら
-                  = fini.file_field :image, class: 'hidden'
-              .single-main__content__form__item__image
-                = fini.label :image, class:"upload-box" do
-                  画像はこちら
-                  = fini.file_field :image, class: 'hidden'
+                  = fini.file_field :image, onchange:"previewFiles()", multiple:"true",class: 'hidden'
+                  = image_tag :"",height:"120",width:"120",name:"preview0",class:"preview"
+                  = image_tag :"",height:"120",width:"120",name:"preview1",class:"preview"
+                  = image_tag :"",height:"120",width:"120",name:"preview2",class:"preview"
+                  = image_tag :"",height:"120",width:"120",name:"preview3",class:"preview"
           .single-main__content__form__item
             .single-main__content__form__item__detail
               %label 商品名
