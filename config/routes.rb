@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   get 'users/credit'
 
 
-  post 'items/purchased/:id' => 'items#purchased',as:'i_purchased_path'
-  get  'items/purchased'
+  post 'items/purchased/:id' => 'items#purchased'
   get  'items/sell_item'
 
   resources :items
