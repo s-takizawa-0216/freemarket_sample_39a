@@ -2,18 +2,27 @@
   = link_to "レディース新着アイテム","#"
 .item-box
   - @ladies.each do |item|
-    = link_to "items/#{item.id}" do
-      %section.item-box__content
+    %section.item-box__content
+      - if item.buyer_id == nil
         %figure.item-box__content__image
-          = image_tag "#{item.images.first.image}"
-        .item-box__content__detail
-          %h3.item-box__content__detail__name
-            = item.name
-          .item-box__content__detail__inner
-            %h3#textBox-price.item-box__content__detail__inner__price
-              = "¥ #{item.price}"
-            %p.item-box__content__detail__inner__tax
-              (税込)
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
+
+      .item-box__content__detail
+        %h3.item-box__content__detail__name
+          = item.name
+        .item-box__content__detail__inner
+          %h3#textBox-price.item-box__content__detail__inner__price
+            = "¥ #{item.price}"
+          %p.item-box__content__detail__inner__tax
+            (税込)
 .item-box__viewall
 = link_to "すべての商品を見る","#"
 

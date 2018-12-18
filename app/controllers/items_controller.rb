@@ -13,11 +13,24 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item  = Item.find(params[:id])
 
     @thumbnails = @item.images
     @same_saler_items = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).first(6)
   end
+
+
+  def purchased
+    @item = Item.find(params[:id])
+    Payjp.api_key = PAYJP_SECRET_KEY
+    charge = Payjp::Charge.create(
+    :amount => @item.price,
+    :card => params['payjp-token'],
+    :currency => 'jpy',
+    )
+    @item.update(buyer_id: current_user.id)
+  end
+
 
   def new
     if user_signed_in?

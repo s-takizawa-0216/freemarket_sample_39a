@@ -52,16 +52,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
   def filename
     original_filename if original_filename
   end
 
-  process :fix_rotate
-  def fix_rotate
-    manipulate! do |img|
-      img = img.auto_orient
-      img = yield(img) if block_given?
-      img
-    end
-  end
 end

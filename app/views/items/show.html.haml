@@ -1,3 +1,4 @@
+
 %head
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
 %body
@@ -20,7 +21,7 @@
             %tr
               %th 出品者
               %td
-                = link_to "user_path(current_user)" do
+                = link_to user_path do
                   = @item.saler.name
                 %div
                   .item-user__rating
@@ -76,9 +77,19 @@
         %span.item__price--bold ¥ #{@item.price}
         %span.item__price__tax (税込)
         %span.item__price__shipping-fee 送料込み
-      .item__point
-        .item__point__message 所持ポイントが表示されます
-      %a.item__btn 購入画面に進む
+
+
+      - if current_user.id != @item.saler_id && @item.buyer_id == nil
+        .item__point
+          .item__point__message 所持ポイントが表示されます
+        %a.item__btn 購入画面に進む
+        = form_tag(action: :purchased, method: :post) do
+          %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript" , "data-text" =>"購入画面に進む"}
+
+      - if current_user.id != @item.saler_id && @item.buyer_id != nil
+        .sold-lavel  売り切れました
+
+
       .item__description
         %p.item__description--inner
         #{@item.detail}
