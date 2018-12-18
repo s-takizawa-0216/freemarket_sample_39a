@@ -6,23 +6,21 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  get 'users/new'
-  get 'users/user_profile'
-  get 'users/user_confilm'
-  get 'users/credit'
-
-  resources :users do
+  resources :users, only: [:index, :new, :show]do
     collection do
-      get 'new1'
-      get 'new2'
-      get 'new3'
-      get 'new4'
-      get 'create_finish'
+      get 'new1','new2','new3','new4','create_finish','user_confilm','user_profile','credit'
+      # get 'new2'
+      # get 'new3'
+      # get 'new4'
+      # get 'create_finish'
+      # get 'user_confilm'
+      # get 'user_profile'
+      # get 'credit'
     end
   end
 
-  get 'users/:id' => 'users#show'
-
+  # get 'users/:id' => 'users#show'
+  # get 'users/new'
   resources :items do
     collection do
       get ':id/seller' => 'items#seller'
