@@ -9,9 +9,7 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
       end
       #emailが空では登録できないこと
-
       it "is invalid without a email" do
-
         user = build(:user, email: "")
         user.valid?
         expect(user.errors[:email]).to include("can't be blank")
@@ -24,13 +22,11 @@ RSpec.describe User, type: :model do
         expect(another_user.errors[:email]).to include("has already been taken")
       end
       #passwordが空では登録できないこと
-
       it "is invalid without a password" do
         user = build(:user, password: "")
         user.valid?
         expect(user.errors[:password]).to include("can't be blank")
       end
-
       #passwordが6文字以上なら登録できること
       it "is valid with 6character or more" do
         user = build(:user, password: "000000")
@@ -77,7 +73,6 @@ RSpec.describe User, type: :model do
         another_user.valid?
         expect(another_user.errors[:name]).to include("has already been taken")
       end
-
       #nameが空では登録できないこと
       it "is invalid without a name" do
         user = build(:user, name: "")
@@ -93,7 +88,6 @@ end
 # ・name,email,password,password_confirmationが存在すれば確認できること ok
 # ・emailが空では登録できないこと ok
 # ・emailが重複している場合登録できないこと ok
-
 # ・passwordが空では登録できないこと ok
 # ・passwordが6文字以上なら登録できること ok
 # ・passwordが5文字以下なら登録できないこと ok
@@ -103,6 +97,5 @@ end
 # ・nameが20文字以上だと登録できないこと ok
 # ・nameが19文字以下だと登録できること ok
 # ・nameが重複しないこと ok
-
 # ・nameが空では登録できないこと ok
 
