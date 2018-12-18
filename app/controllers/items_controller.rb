@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
       @item.images.build
       @item.build_shipping_method
     else
-      redirect_to users_new_path
+      redirect_to new_user_path
     end
   end
 
