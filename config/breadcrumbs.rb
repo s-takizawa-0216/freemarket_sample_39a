@@ -8,6 +8,11 @@ crumb :mypage do
   parent :root
 end
 
+crumb :items do
+  link "#{Item.find(id = params[:id]).name}", item_path
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

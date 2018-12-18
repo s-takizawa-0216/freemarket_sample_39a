@@ -1,0 +1,21 @@
+.bread-crumbs {
+  span:last-child{
+  font-weight: 600;
+  }
+  position: relative;
+  background: #fff;
+  ul{
+    width: 1020px;
+    margin: 0 auto;
+    list-style: none;
+    white-space: normal;
+    li{
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}

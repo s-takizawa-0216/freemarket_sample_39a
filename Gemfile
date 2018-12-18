@@ -86,9 +86,5 @@ gem 'fog-aws'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-gem 'carrierwave'
-<<<<<<< HEAD
 gem "gretel"
-=======
 gem 'recaptcha', require: "recaptcha/rails"
->>>>>>> yuuki999/master
