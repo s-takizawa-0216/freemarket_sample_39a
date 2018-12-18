@@ -11,9 +11,9 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
 
-  validates :name, presence:true
+  validates :name, presence:true, length: { maximum: 40 }
   validates :images, presence:true
-  validates :detail, presence:true
+  validates :detail, presence:true, length: { maximum: 1000 }
   validates :condition, presence:true
 
 end
