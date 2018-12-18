@@ -15,6 +15,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
 
+    @thumbnails = @item.images
+    @same_saler_items = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).first(6)
   end
 
   def new

@@ -14,9 +14,7 @@
           .item__content__image__top
             = image_tag("#{@item.images.first.image}",height:"300",width:"300",alt:"")
           .item__content__image__list.clearfix
-            - @item.images.each do |image|
-              .item__content__image__list__inner
-                = image_tag("#{@images}",height:"75",width:"75",src:"")
+            = render partial:"items/thumbnails", collection: @thumbnails
         %table.item__content__table
           %tbody
             %tr
@@ -74,15 +72,6 @@
             %tr
               %th 発送の目安
               %td #{@item.shipping_method.days_to_arrival}
-      %script
-        window.addEventListener('load', function() {
-        $('.item__content__image__list__inner img').mouseover(function(){
-        var $thisImg = $(this).attr('src');
-        var $thisAlt = $(this).attr('alt');
-        $('.item__content__image__top img').attr({src:$thisImg,alt:$thisAlt});
-        });
-        }, false);
-
       .item__price
         %span.item__price--bold ¥ #{@item.price}
         %span.item__price__tax (税込)
@@ -156,12 +145,7 @@
         %h2.other-items__head
           = link_to "#{@item.saler.name}さんのその他の出品","user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
+          = render partial: 'shared/item-content',collection: @same_saler_items
       %section.other-items__brand
         %h2.other-items__head
           = link_to 'ブランド名のその他の出品',"user-item-page"
