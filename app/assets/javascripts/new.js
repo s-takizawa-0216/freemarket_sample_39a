@@ -39,7 +39,7 @@ function previewFiles() {
     }
 
     if(file_length>3){
-        console.log("2");
+        console.log("3");
         reader_array[3].addEventListener("load", function () {
             preview_array[3].src = reader_array[3].result;
         }, false);
