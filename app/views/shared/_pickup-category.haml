@@ -14,7 +14,6 @@
           .sold__triangle
           .sold__text sold
 
-
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
@@ -31,8 +30,18 @@
 .item-box
   - @mens.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}",class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
+
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
@@ -43,14 +52,24 @@
             (税込)
 .item-box__viewall
   = link_to "すべての商品を見る","#"
+
 
 %h3.pickup-items__title
   = link_to "ベビー・キッズ 新着アイテム","#"
 .item-box
   - @baby.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" , class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
@@ -62,13 +81,23 @@
 .item-box__viewall
   = link_to "すべての商品を見る","#"
 
+
 %h3.pickup-items__title
   = link_to "コスメ・香水・美容 新着アイテム","#"
 .item-box
   - @cosme.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" , class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
