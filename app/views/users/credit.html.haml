@@ -1,4 +1,9 @@
-= render partial: "shared/header"
+= render partial: "shared/header-login"
+.bread-crumbs
+ %ul
+  %li
+   - breadcrumb :credit
+   = breadcrumbs separator: " &rsaquo; "
 
 .main-content
  %main.r-content-clearfix
