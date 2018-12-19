@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get ':id/seller' => 'items#seller'
+      post 'purchased/:id' => 'items#purchased'
+      get  'sell_item'
     end
   end
 
