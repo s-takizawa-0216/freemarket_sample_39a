@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
     @thumbnails = @item.images
     @same_saler_items = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).first(6)
+    @same_category_items = Item.where(lcategory_id: @item.lcategory_id).where.not(id: @item.id).first(6)
   end
 
 

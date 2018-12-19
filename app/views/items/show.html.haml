@@ -156,15 +156,10 @@
         %h2.other-items__head
           = link_to "#{@item.saler.name}さんのその他の出品","user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'shared/item-content',collection: @same_saler_items
+          = render partial: 'items/saler_item_content'
       %section.other-items__brand
         %h2.other-items__head
-          = link_to 'ブランド名のその他の出品',"user-item-page"
+          = link_to "#{@item.lcategory.name}のその他の出品","user-item-page"
         .other-items__contents.clearfix
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
-          = render partial: 'shared/item-content'
+          = render partial: 'items/category_item_content'
     = render partial: 'shared/footer'
