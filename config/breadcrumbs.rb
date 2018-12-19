@@ -8,10 +8,30 @@ crumb :mypage do
   parent :root
 end
 
+crumb :profile do
+  link "プロフィール", user_profile_users_path
+  parent :mypage
+end
+
+crumb :confilm do
+  link "本人情報", user_confilm_users_path
+  parent :mypage
+end
+
+crumb :credit do
+  link "支払い情報", credit_users_path
+  parent :mypage
+end
+
 crumb :items do
   link "#{Item.find(id = params[:id]).name}", item_path
   parent :root
 end
+
+# crumb :logout do #ログアウトのビュー完成後実装
+#   link "ログアウト", user_path
+#   parent :mypage
+# end
 
 # crumb :projects do
 #   link "Projects", projects_path

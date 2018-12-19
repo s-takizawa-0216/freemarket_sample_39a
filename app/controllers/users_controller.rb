@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   def create_finish
   end
 
+  def credit
+  end
+
   def show
     @name = current_user.name
     @user = User.where(user_id: current_user.id)

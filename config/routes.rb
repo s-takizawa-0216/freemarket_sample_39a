@@ -6,17 +6,14 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :users, only: [:index, :new, :show]do
+  resources :users, only: [:index, :new, :show, :destroy]do
     collection do
-      get 'new1','new2','new3','new4','create_finish','user_confilm','user_profile','credit'
-      # get 'new2'
-      # get 'new3'
-      # get 'new4'
-      # get 'create_finish'
-      # get 'user_confilm'
-      # get 'user_profile'
-      # get 'credit'
+      get 'new1','new2','new3','new4','create_finish','user_confilm','user_profile', 'credit'
     end
+
+    # member do
+    #   get ':id/credit' => 'users#credit'
+    # end
   end
 
   # get 'users/:id' => 'users#show'

@@ -4,11 +4,11 @@
   .default-content
     %header
       = render partial: 'shared/header'
-.bread-crumbs
-  %ul
-    %li
-      - breadcrumb :items
-      = breadcrumbs separator: " &rsaquo; "
+    .bread-crumbs
+      %ul
+        %li
+          - breadcrumb :items
+          = breadcrumbs separator: " &rsaquo; "
     %section.item
       %h1.item__name #{@item.name}
       .item__content.clearfix
