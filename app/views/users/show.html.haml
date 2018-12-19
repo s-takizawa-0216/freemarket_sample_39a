@@ -1,10 +1,12 @@
 %head
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
-
-
 %body
 = render partial: "shared/header-login"
-
+.bread-crumbs
+  %ul
+    %li
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; "
 .main-content
   %main.r-content-clearfix
     .rightcontent1
@@ -54,12 +56,9 @@
                   .user-mypage__text  sample-news5
             %li.text
               .user-mypage__link1  一覧を見る
-
           %ul.id
             = image_tag("/images/logo-gray.svg" ,size:"100x100" , alt: "mercari-log" , class: "mercari-log16")
             %li.text1 現在やることはありません。
-
-
       %section.rightcontent3
         %section.rightcontent__container
           %h2.rightcontent3__head 購入した商品

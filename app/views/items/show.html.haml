@@ -9,9 +9,11 @@
       = render partial: 'shared/header-login'
     -else
       = render partial: 'shared/header'
-    %nav.bread-crumbs
+    .bread-crumbs
       %ul
-        %li パンくず
+        %li
+          - breadcrumb :items
+          = breadcrumbs separator: " &rsaquo; "
     %section.item
       %h1.item__name #{@item.name}
       .item__content.clearfix
