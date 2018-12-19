@@ -86,6 +86,7 @@ gem 'fog-aws'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
+gem "gretel"
 gem 'payjp'
 gem 'carrierwave'
 gem 'recaptcha', require: "recaptcha/rails"

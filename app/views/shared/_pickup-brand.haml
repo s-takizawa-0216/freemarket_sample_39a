@@ -3,8 +3,16 @@
 .item-box
   - @chanel.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{@item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
@@ -21,8 +29,17 @@
 .item-box
   - @vuitton.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name
@@ -39,9 +56,17 @@
 .item-box
   - @supreme.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
-      .item-box__content__detail
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
         %h3.item-box__content__detail__name
           = item.name
         .item-box__content__detail__inner
@@ -57,8 +82,17 @@
 .item-box
   - @nike.each do |item|
     %section.item-box__content
-      %figure.item-box__content__image
-        = image_tag "#{item.images.first.image}"
+      - if item.buyer_id == nil
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+      - else
+        %figure.item-box__content__image
+          = link_to item_path(item) do
+            = image_tag "#{item.images.first.image}" ,class: 'item-box__content__image1'
+          .sold__triangle
+          .sold__text sold
+
       .item-box__content__detail
         %h3.item-box__content__detail__name
           = item.name

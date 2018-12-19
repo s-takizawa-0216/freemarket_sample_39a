@@ -6,16 +6,12 @@
 .single-container{
   @include background;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-
   .single-header{
-
     height:128px;
     text-align: center;
-
     h1{
       margin: 40px 0 0;
       display: inline-block;
-
       a{
         display: inherit;
         width: 185px;
@@ -23,7 +19,6 @@
         line-height: 49px;
       }
     }
-
   }
 
 .alert.alert{
@@ -35,41 +30,101 @@
 #item_mcategory_id{
 
 }
+  .alert.alert{
+    margin: 0 0 20px 30px;
+    color: red;
+    font-weight: bold;
+  }
   .single-main{
     display:block;
-
     &__content{
       background-color: white;
       width: 700px;
       margin: 0 auto;
+      &__head{
+        font-size: 22px;
+        padding: 32px 16px;
+        text-align: center;
+        font-weight: bold;
+      }
+      &__form{
+        border: 1px solid #eee;
+        &__item{
+          width: 620px;
+          padding: 40px;
+          border-top: 1px solid #eee;
+          @include clearfix;
+          &__image{
+            width: 140px;
+            height:160px;
+            margin-left: 10px;
+            position:relative;
+            display: inline-block;
+            .upload-box{
+              position: absolute;
+              background-color:#f5f5f5;
+              border: 1px dashed #ccc;
+              margin-top: 16px;
+              box-sizing:border-box;
+              cursor: pointer;
+              .hidden{
+                display:none;
+              }
+            }
+            pre{
+              text-align: center;
+              font-size: 14px;
+              line-height: 1.5;
+              position: absolute;
+              top: 50%;
+              left: 16px;
+              right: 16px;
+            }
+          }
+          h4{
+            color:#a4a4a4;
+            font-weight: bold;
+            font-size: 14px;
+          }
 
-        &__head{
-          font-size: 22px;
-          padding: 32px 16px;
-          text-align: center;
-          font-weight: bold;
-        }
+          &__title{
+            font-weight: bold;
+          }
 
-        &__form{
-          border: 1px solid #eee;
+          p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 14px;
+          }
 
-            &__item{
-              width: 620px;
-              padding: 40px;
-              border-top: 1px solid #eee;
-              @include clearfix;
+          &__detail{
+
+            &:first-child{
+              margin: 0;
+            }
+            margin:40px 0 0 ;
 
               &__title{
                 display: inline;
               }
 
+            label{
+              font-weight: 600;
+              font-size: 14px;
+              display: block;
+            }
 
-              &__image{
-                width: 140px;
-                height:160px;
-                margin-left: 10px;
-                position:relative;
-                display: inline-block;
+            .input-name{
+              margin: 8px 0 0;
+              width:100%;
+              height:48px;
+              font-size: 16px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              line-height:1.5;
+              box-sizing:border-box;
+            }
 
                 .upload-box{
                   position: absolute;
@@ -104,14 +159,30 @@
                 font-weight: bold;
                 font-size: 14px;
               }
+            .content-detail{
+              margin: 8px 0 0;
+              width:100%;
+              max-width:100%;
+              border: 1px solid #ccc;
+              font-size: 16px;
+              padding: 10px;
+              line-height:1.5;
+              box-sizing:border-box;
+            }
 
-              &__title{
-                font-weight: bold;
-              }
+          }
 
-              p{
-                margin: 8px 0 0;
-                line-height: 1.5;
+          .sell-price{
+
+            &__box{
+              padding-bottom: 24px;
+              @include clearfix;
+
+              .box__left{
+                width:50%;
+                line-height: 48px;
+                display: inline-block;
+                font-weight:600;
                 font-size: 14px;
               }
 
@@ -135,30 +206,42 @@
                   font-size: 14px;
                   display: inline-block;
                 }
+              .box__right{
+                width:50%;
+                display: inline-block;
+                float: right;
+                text-align: right;
 
-                .input-name{
-                  margin: 8px 0 0;
-                  width:100%;
-                  height:48px;
-                  font-size: 16px;
-                  padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  line-height:1.5;
-                  box-sizing:border-box;
+                div{
+                  display: inline-block;
+                  margin: 0 0 0 8px;
+                  width:80%;
+
+                    .input-name{
+                      width: 100%;
+                      height:48px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      box-sizing:border-box;
+                      text-align: right;
+                      font-size: 16px;
+                      padding:10px 16px 8px;
+                    }
+                }
+              }
+
+              &--center{
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                font-size: 14px;
+
+                &--left{
+                  display: inline-block;
                 }
 
-                .content-detail{
-                  margin: 8px 0 0;
-                  width:100%;
-                  max-width:100%;
-                  border: 1px solid #ccc;
-                  font-size: 16px;
-                  padding: 10px;
-                  line-height:1.5;
-                  box-sizing:border-box;
+                &--right{
+                  float:right;
                 }
-
               }
 
               .sell-price{
@@ -217,39 +300,65 @@
                     border-top: 1px solid #ccc;
                     font-size: 16px;
                     font-weight: bold;
+              &--bold{
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                font-size: 16px;
+                font-weight: bold;
 
-                    &--left{
-                      display: inline-block;
-                    }
+                &--left{
+                  display: inline-block;
+                }
 
-                    &--right{
-                      float:right;
-                    }
-                  }
+                &--right{
+                  float:right;
                 }
               }
-              .sell__btn__red{
-                line-height: 48px;
-                font-size: 16px;
-                margin: 40px 0 0;
-                width: 100%;
-                background: #ea352d;
-                border: 1px solid #ea352d;
-                color: #fff;
-                cursor: pointer;
-              }
-              .sell__btn__gray{
-                display: block;
-                width: 45%;
-                line-height: 48px;
-                margin: 24px auto 0;
-                text-align: center;
-                background-color:#aaa;
-                border: 1px solid #aaa;
-                color: #fff;
-                font-size: 14px;
-                text-decoration: none;
+            }
+          }
+          .sell__btn__red{
+            line-height: 48px;
+            font-size: 16px;
+            margin: 40px 0 0;
+            width: 100%;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            cursor: pointer;
+          }
+          .sell__btn__gray{
+            display: block;
+            width: 45%;
+            line-height: 48px;
+            margin: 24px auto 0;
+            text-align: center;
+            background-color:#aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
 
+          }
+
+          .item__sub{
+            display: inline-block;
+          }
+          &__select{
+            float:right;
+            width:400px;
+
+            .select-wrap{
+              margin: 8px 0 0;
+
+              >select{
+                width:100%;
+                height: 48px;
+                border-radius: 4px;
+                padding: 0 16px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                background-color: white;
+              }
               }
 
               .item__sub{
@@ -286,11 +395,13 @@
                 }
               }
             }
-
+          }
         }
 
     }
-  }
+
+}
+}
 
   .single-footer{
     width: 456px;
