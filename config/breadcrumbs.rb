@@ -10,17 +10,17 @@ end
 
 crumb :profile do
   link "プロフィール", user_profile_users_path
-  parent :mypage
+  parent :root
 end
 
 crumb :confilm do
   link "本人情報", user_confilm_users_path
-  parent :mypage
+  parent :root
 end
 
 crumb :credit do
   link "支払い情報", credit_users_path
-  parent :mypage
+  parent :root
 end
 
 crumb :items do
