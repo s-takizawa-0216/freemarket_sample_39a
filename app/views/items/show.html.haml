@@ -1,9 +1,13 @@
 
 %head
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+
 %body
   .default-content
     %header
+    -if user_signed_in?
+      = render partial: 'shared/header-login'
+    -else
       = render partial: 'shared/header'
     %nav.bread-crumbs
       %ul
@@ -80,30 +84,30 @@
             %tr
               %th 発送の目安
               %td #{@item.shipping_method.days_to_arrival}
-      %script
-        window.addEventListener('load', function() {
-        $('.item__content__image__list__inner img').mouseover(function(){
-        var $thisImg = $(this).attr('src');
-        var $thisAlt = $(this).attr('alt');
-        $('.item__content__image__top img').attr({src:$thisImg,alt:$thisAlt});
-        });
-        }, false);
 
       .item__price
         %span.item__price--bold ¥ #{@item.price}
         %span.item__price__tax (税込)
         %span.item__price__shipping-fee 送料込み
 
+      - if user_signed_in?
+        - if current_user.id != @item.saler_id && @item.buyer_id == nil
+          .item__point
+            .item__point__message 所持ポイントが表示されます
+          .item__btn 購入画面に進む
+          = form_tag(action: :purchased, method: :post) do
+            %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript" , "data-text" =>"購入画面に進む"}
 
-      - if current_user.id != @item.saler_id && @item.buyer_id == nil
-        .item__point
-          .item__point__message 所持ポイントが表示されます
-        %a.item__btn 購入画面に進む
-        = form_tag(action: :purchased, method: :post) do
-          %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript" , "data-text" =>"購入画面に進む"}
+        - if current_user.id != @item.saler_id && @item.buyer_id != nil
+          .sold-lavel  売り切れました
+      - else
+        - if @item.buyer_id == nil
+          .item__point
+            .item__point__message 所持ポイントが表示されます
+          = link_to '購入画面に進む' , new_user_session_path , class: 'item__btn'
 
-      - if current_user.id != @item.saler_id && @item.buyer_id != nil
-        .sold-lavel  売り切れました
+        - if @item.buyer_id != nil
+          .sold-lavel  売り切れました
 
 
       .item__description
