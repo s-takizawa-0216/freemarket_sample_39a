@@ -1,5 +1,4 @@
-//お知らせとtodoのタブの切り替え
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   // ①タブをクリックしたら発動
   $('.tab li').click(function() {
@@ -17,25 +16,26 @@ $(function() {
     $('.area ul').removeClass('show').eq(index).addClass('show');
 
   });
-});
 
-//取引中と過去の取引のタブの切り替え
-$(function() {
 
-  // ①タブをクリックしたら発動
-  $('.tab-2 li').click(function() {
+  //取引中と過去の取引のタブの切り替え
+  $(function() {
 
-    // ②クリックされたタブの順番を変数に格納
-    var index = $('.tab-2 li').index(this);
+    // ①タブをクリックしたら発動
+    $('.tab-2 li').click(function() {
 
-    // ③クリック済みタブのデザインを設定したcssのクラスを一旦削除
-    $('.tab-2 li').removeClass('active-2');
+      // ②クリックされたタブの順番を変数に格納
+      var index = $('.tab-2 li').index(this);
 
-    // ④クリックされたタブにクリック済みデザインを適用する
-    $(this).addClass('active-2');
+      // ③クリック済みタブのデザインを設定したcssのクラスを一旦削除
+      $('.tab-2 li').removeClass('active-2');
 
-    // ⑤コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
-    $('.area-2 ul').removeClass('show-2').eq(index).addClass('show-2');
+      // ④クリックされたタブにクリック済みデザインを適用する
+      $(this).addClass('active-2');
 
+      // ⑤コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
+      $('.area-2 ul').removeClass('show-2').eq(index).addClass('show-2');
+
+    });
   });
 });
