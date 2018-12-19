@@ -1,51 +1,54 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
 
-    var menuBtn_category = $(".left__list__category"),
-    menuContent_category = $(".left__list__category__pulldown__name");
-    menuBtn_bland = $(".left__list__brand"),
-    menuContent_bland = $(".left__list__brand__pulldown__name");
+    $(function(){
 
-    menuBtn_category.mouseover(function(){
-    menuContent_category.show();
-    });
+        var menuBtn_category = $(".left__list__category"),
+        menuContent_category = $(".left__list__category__pulldown__name");
+        menuBtn_bland = $(".left__list__brand"),
+        menuContent_bland = $(".left__list__brand__pulldown__name");
 
-    menuBtn_category.mouseout(function(){
-    menuContent_category.hide();
-    });
+        menuBtn_category.mouseover(function(){
+        menuContent_category.show();
+        });
 
-    menuContent_category.mouseover(function(){
-    $(this).find('ul').show();
-    });
+        menuBtn_category.mouseout(function(){
+        menuContent_category.hide();
+        });
 
-    menuContent_category.mouseout(function(){
-    $(this).find('ul').hide();
-    });
+        menuContent_category.mouseover(function(){
+        $(this).find('ul').show();
+        });
 
-    menuBtn_bland.mouseover(function(){
-    menuContent_bland.show();
-    });
+        menuContent_category.mouseout(function(){
+        $(this).find('ul').hide();
+        });
 
-    menuBtn_bland.mouseout(function(){
-    menuContent_bland.hide();
-    });
+        menuBtn_bland.mouseover(function(){
+        menuContent_bland.show();
+        });
 
-    var rightBtn = $(".mypage"),
-    rightContent = $(".header-mypage__box");
+        menuBtn_bland.mouseout(function(){
+        menuContent_bland.hide();
+        });
 
-    rightBtn.mouseover(function(){
-    rightContent.show();
-    })
+        var rightBtn = $(".mypage"),
+        rightContent = $(".header-mypage__box");
 
-    rightContent.mouseout(function(){
-    rightContent.hide();
-    });
+        rightBtn.mouseover(function(){
+        rightContent.show();
+        })
 
-    $(".notice").mouseover(function(){
-    $(".header-notice__box").show();
-    });
+        rightContent.mouseout(function(){
+        rightContent.hide();
+        });
 
-    $(".notice").mouseout(function(){
-    $(".header-notice__box").hide();
-    });
+        $(".notice").mouseover(function(){
+        $(".header-notice__box").show();
+        });
 
-}, false);
+        $(".notice").mouseout(function(){
+        $(".header-notice__box").hide();
+        });
+
+    }, false);
+})
